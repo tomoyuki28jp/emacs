@@ -1,0 +1,3 @@
+#name : print '<pre>'; print_r(...); print '</pre>';
+# --
+print '<pre>'; print_r($0); print '</pre>';

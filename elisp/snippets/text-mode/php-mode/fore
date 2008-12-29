@@ -1,0 +1,5 @@
+#name : foreach ... { ... }
+# --
+foreach (\$${1:x} as \$${2:array}) {
+    $0
+}

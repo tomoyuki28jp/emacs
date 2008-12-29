@@ -1,0 +1,9 @@
+#name : if, elsif, else ...
+# --
+if ($1) {
+    $0
+} elsif ($2) {
+
+} else {
+
+}

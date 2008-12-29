@@ -1,0 +1,574 @@
+2008-07-20  Naohiro Aota  <nao.aota@gmail.com>
+
+	* releng.txt: Update.
+
+2008-05-31  Naohiro Aota  <nao.aota@gmail.com>
+
+	* Makefile.in: Specify -no-site-file.
+
+2008-03-03  Naohiro Aota  <nao.aota@gmail.com>
+
+	* navi2ch.texi: @cindex の追加。@uref にタイトルを追加。 表記の正規
+	化。
+
+2008-02-11  Naohiro Aota  <nao.aota@gmail.com>
+
+	* batch-texi2info.el (batch-texi2info):
+	texinfo-every-node-update() を呼ぶ。
+	(texinfo-copying-text): 新変数。
+	(texinfo-copying,texinfo-insertcopying): 新関数。
+	(texinfo-format-scan): @copying を処理する advice.
+
+	* navi2ch.texi: Copyright 表記を @copying 〜 @end copying の中に移
+	動。
+
+2008-02-03  Naohiro Aota  <nao.aota@gmail.com>
+
+	* navi2ch.texi: Copyright の表記を更新。
+
+2008-01-31  Naohiro Aota  <nao.aota@gmail.com>
+
+	* navi2ch.texi: Copyright の表記を更新。
+
+2008-01-30  Naohiro Aota  <nao.aota@gmail.com>
+
+	* navi2ch.texi (Global Key Bindings): C-c C-l のキーバインドについ
+	て表記。
+
+2007-01-13  extra  <ekisutora@users.sourceforge.net>
+
+	* navi2ch.texi (Article Message Filter):
+	フィルタ機能の拡張にともなう変更の反映
+
+2006-11-12  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Compile): --with-emacs --with-xemacs を削除
+	EMACS EMACSLOADPATH 環境変数を追加
+	上記変更を実行例に反映
+
+2006-11-07  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Getting Develop Version): CVS ホストを
+	navi2ch.cvs.sourceforge.net に
+
+2006-10-29  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* Makefile.am (.texi.info): 作成前に *.info* を削除
+
+	* navi2ch.texi (How to Write):
+	navi2ch-multibbs-send-message-retry-confirm-function についての記述
+	を削除
+
+2006-10-22  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* Makefile.am (.texi.info): source ディレクトリ以外で
+	configure した場合も info 作成できるように。
+
+	patch#1144721
+
+2005-02-05  Taiki SUGAWARA  <taiki.s@cityfujisawa.ne.jp>
+
+	* navi2ch.texi (Saving Send Log): 送信控えのレスの表示 を追記。
+
+2005-01-28  Taiki SUGAWARA  <taiki.s@cityfujisawa.ne.jp>
+
+	* navi2ch.texi (How to Use Mona Font): navi2ch-mona-enable しても
+	使えない場合の設定を追記。
+
+2005-01-14  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Board Questions): 整理。
+
+2004-07-29  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Misc Questions): expire のキーバインドを補足。
+
+2004-05-08  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Board Questions): typo 修正。
+	設定後に C-u s が必要なことを明記。
+	(Board Questions, How to Write, Misc Questions): ファイルの
+	リビジョンではなく、Navi2ch のバージョンを記載。
+
+2004-04-29  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Message Mode AA List): 最新版に同期。
+	(General Qestions): operation already in progress エラーの対処方法
+	を変更してセクションを移動。
+	(Board Questions): 同上。
+
+2004-04-21  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Getting Develop Version): CVS ホストを
+	cvs.sourceforge.net に。
+	<http://sourceforge.net/cvs/?group_id=39552>
+
+2004-04-14  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Article Mode Key Bindings): "u" を追加。
+
+2004-03-25  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Board Questions): navi2ch-list-moved-board-alist
+	について追記。
+
+2004-03-22  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Can not Read): 板移転について追記。
+	(Board Questions): 運用情報板について追記。
+
+2004-01-17  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Search Thread): Orphan なスレの検索について追記。
+
+2003-10-29  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Getting): ダウンロードページを直接記載。
+	(Compile): 手順に tar 玉の展開を追記。
+
+2003-09-29  mami  <mami@users.sourceforge.net>
+
+	* releng.txt: 更新。
+
+2003-09-21  mami  <mami@users.sourceforge.net>
+
+	* releng.txt: 更新。
+
+2003-09-08  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Board Misc Mode Key Bindings): "C-c C-r" を追加。
+	(Article Mode Key Bindings): "C-c C-r" を追加。
+
+2003-07-16  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi: Copyright 更新。
+
+2003-07-01  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Getting Develop Version): URL の最後に / を追加。
+
+2003-06-30  extra  <ekisutora@users.sourceforge.net>
+
+	* navi2ch.texi (Article Mode): PopUp Article モードでの "D"、"A"、
+	"d"、"C-u d" について記述。
+	(Article Message Filter): 新ノード。
+
+2003-06-07  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ): @appendixsec でセクション分け。
+
+2003-05-13  extra  <ekisutora@users.sourceforge.net>
+
+	* navi2ch.texi (Article Mode Key Bindings): "!" を追加。
+
+2003-04-09  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ): navi2ch-message-user-name の変更に対応。
+
+2003-04-02  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Getting Develop Version): CVS HEAD について誤解し
+	ている人がいるようなので若干追記。
+
+2003-03-17  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (How to Use Mona Font):
+	navi2ch-mona-enable-article-list,
+	navi2ch-mona-disable-article-list について追記。
+
+2003-03-05  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ): ◆YaAzLuckyc さんのページ移転に対応。
+	(How to Use Mona Font): 脱字を修正。
+	http://pc.2ch.net/test/read.cgi/unix/1046402063/86
+	(How to Use Mona Font): コメント削除。
+	(Global Key Bindings): 誤字を修正。
+
+2003-02-26  extra  <ekisutora@users.sourceforge.net>
+
+	* navi2ch.texi (Article Mode Key Bindings): "F" と "x" を追加。
+
+2003-02-26  SAITO Takuya  <tabmore@users.sourceforge.net>
+
+	* navi2ch.texi (Article Mode Key Bindings): "M-u" を削除。
+	"M-i" を追加。
+
+2003-02-16  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Compile): --with-packagedir, --with-icondir,
+	--infodir を追加。
+
+2003-02-14  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Board Misc Mode Key Bindings): "I" を追加。
+
+2003-02-08  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Article Mode): @key を @kbd で囲んだ。
+	(Article View Range): 新規ノード。表示範囲について。
+	(FAQ): 表示範囲についてを追加。
+
+2003-02-06  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Board Misc Mode Key Bindings): "C-o" を追加。
+	(Article Mode Key Bindings): "C-o" を追加。
+
+2002-12-30  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ): デフォルトの名前の変数名を間違えていたので、
+	修正。
+	(navi2ch-message-remember-user-name → navi2ch-message-user-name)
+
+2002-12-19  SAITO Takuya  <tabmore@users.sourceforge.net>
+
+	* navi2ch.texi (Updated Flag): 新スレフラグを追加。
+	(Article Mode): レスの検索を追加。
+	(Message Mode): 「送信控え」追加。
+	(Article Mode Key Bindings): "?" を追加。
+
+2002-12-17  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Start Navi2ch): M-x に @key{RET} を追加。
+	(FAQ): customize-group について追加。
+	デフォルトの名前について更新。
+	read.cgi 関連の設定方法追加。
+	スレのバッファ数制限について簡潔化。
+	M-x に @key{RET} を追加。
+	順番変更、ざっと分類。
+
+2002-12-16  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ): たまには先手を打って、時計が合ってない場合の
+	対処方法を記述。
+	ディレクトリロックについて記述。
+
+2002-11-25  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ): bbsmenu について更新。
+
+2002-10-28  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Top): 「イントール」を「インストール」に修正。
+	http://pc.2ch.net/test/read.cgi/unix/1031231315/554
+
+2002-09-19  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Board Misc Mode Key Bindings): "R" の説明を補足。
+	"m R" を追加。
+	(FAQ): Message モードの "C-c C-i" について記述。
+
+2002-08-28  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Article Mode Key Bindings): "e" を追加。
+
+2002-08-19  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ): navi2ch-head について追加。
+	debug-on-error についてを一番後ろに移動。
+
+2002-08-18  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Bookmark Mode Key Bindings): "X" と "S" を追加。
+	(FAQ): bookmark モードで sort 後の並び順の記憶について追加。
+
+2002-07-27  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Board Mode Key Bindings): fix typo.
+	http://pc.2ch.net/test/read.cgi/unix/1023884490/634
+
+2002-07-26  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Compile): configure を使用しないコンパイル方法につ
+	いて追記。
+	(Thanks): 謝辞に APEL、Wanderlust を追加。
+
+
+2002-07-24  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Compile): ./configure の --help オプションについて
+	追記。
+	(FAQ): 板によってはスレ立てられないかも、を追記。
+
+2002-07-22  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Message Mode): C-c C-o について追記。
+	(Global Key Bindings): 同上。
+
+2002-07-20  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Compile): site-start.el でメッセージを表示してると
+	マズーなので、-no-site-file について追加。
+	(How to Use Mona Font): ちょいと順番を変えて脚注を追加してみました。
+	こんなんでどうでしょ。
+
+2002-07-20  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ): 「にちゃんねる」→「２ちゃんねる」に変更。
+
+2002-07-19  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (How to Use Mona Font):
+	navi2ch-mona-arrange-message の変更に追随して変更・補足。
+
+2002-07-19  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi: footnotestyle を end に。
+
+2002-07-18  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Getting): 以前のリリースについての記述をコメント化。
+
+2002-07-17  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi: Mona Fonts -> Mona Font
+
+2002-07-15  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ): エラー報告のしかたについて追加。
+
+	* Makefile.am (.texi.info): デフォルトルールと同様、srcdir に
+	cd するように。
+	(.texi.html): MAKEINFO マクロを使用するように。
+
+	* navi2ch.texi (Getting Develop Version): make update について追加。
+
+2002-07-14  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ): navi2ch-article-get-url-text について追記。
+
+2002-07-10  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* Makefile.am (CLEANFILES): navi2ch.info を削除。
+	(.texi.info): 別ディレクトリでも作成できるように。
+
+2002-07-07  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Compile): XEmacs 21.4.8 だと ~/.xemacs 直下はパッ
+	ケージディレクトリとみなさないようなので、configure の例を
+	~/.xemacs/mule-packages に変更。
+
+2002-07-06  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (navi2ch-doc-update-aa-list):
+	navi2ch-message-aa-default-alist から値を取って来るようにした。
+
+2002-07-05  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi: @ifinfo -> @ifnottex
+	Copyright Notice の場所を変更。(makeinfo --html のバグ回避)
+
+	* batch-texi2info.el: Emacs 20 などでも @ifnottex を使えるように。
+
+	* Makefile.am (.texi.dvi): texi2dvi から -c フラグを削除。
+	(.texi.html): makeinfo から --ifinfo フラグを削除。
+
+	* navi2ch.texi (Start Navi2ch): require -> autoload に変更。
+	(What is Mona Fonts): 最新の URL に更新。
+	(Getting Develop Version): section に格上げ。Compile の後に移動。
+
+2002-07-04  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Message Mode AA List): 最新版に同期。
+	(最後尾): AA List のアップデートが面倒になったので自動的に編集する
+	関数を書いてみた。うまくすればキーバインドの編集も自動化できる?
+
+	* Makefile.am (AUTOMAKE_OPTIONS): texinfo.tex を追加したので削除。
+	(CLEANFILES): make clean で消すファイルを追加。
+	(.texi.info): navi2ch.info~ が残ることがあったのでワイルドカード追加。
+	(pdf, .texi.dvi, .dvi.pdf, html, .texi.html): 新ターゲット。
+
+2002-07-03  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Article Mode Key Bindings): 最新版に同期。
+	(Search Thread): cache 検索について追加。板を m a m i することを勧
+	める文章を削除。
+
+2002-07-03  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ):
+	有志メンテの板一覧 http://www.onpuch.jp/board/bdleft.html を追加。
+
+2002-07-02  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Message Mode AA List): AA 追加。
+
+2002-07-01  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi: FSF Emacs -> GNU Emacs
+	(Message Mode AA List): AA 追加。
+
+2002-06-30  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Board Misc Mode Key Bindings): 最新版に同期。
+
+2002-06-29  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Message Mode Key Bindings): 最新版に同期。
+	(Message Mode AA List): 同上。
+
+2002-06-28  Taiki SUGAWARA  <taiki.s@cityfujisawa.ne.jp>
+
+	* navi2ch.texi (List Mode): 最新版に同期。
+	(Global Key Bindings): 同上。
+
+2002-06-27  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Bookmark Mode Key Bindings): 最新版に同期。
+
+2002-06-23  mami  <mami@users.sourceforge.net>
+
+	* navi2ch.texi (Board Misc Mode Key Bindings): 最新版に同期。
+	(Board Mode Key Bindings): 同上。
+	(Bookmark Mode Key Bindings): 同上。
+
+2002-06-13  Nanashi San  <nanashi@users.sourceforge.net>
+
+	キーバインドいじった時はこっちも更新キボンヌ。
+
+	* navi2ch.texi (How to Use Mona Fonts): navi2ch-mona-enable の設定
+	だけでよくなったのでその旨記述。
+	(Global Key Bindings): 最新版に同期。
+	(Board Misc Mode Key Bindings): 同上。
+	(Article Mode Key Bindings): 同上。
+
+2002-04-10  Taiki SUGAWARA  <taiki.s@cityfujisawa.ne.jp>
+
+	* navi2ch.texi (FAQ): C-u s についての記述を追加。
+
+2002-03-06  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* navi2ch.texi (FAQ): 新変数 navi2ch-board-hide-updated-article
+	の記述を追加
+
+2002-02-26  NOKUBI Takatsugu  <knok@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ): 2つ更新
+	navi2ch-auto-update のこと
+	w3m.el のこと
+
+2002-02-06  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi: navi2ch -> Navi2ch
+	動作する Emacsen から Mule を抜いた。(Emacs と並列に Mule と書いた
+	場合は Mule 2.3 と勘違いされるかもしれないので)
+	(List Mode): 「変わった板」を追加。
+	(FAQ): 「変わった板」について追加。
+
+2002-01-24  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (Article Mode Key Bindings): ESC b を ESC d に。
+
+2002-01-23  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi: メニューをきれいに。
+	http://pc.2ch.net/test/read.cgi/unix/1009340234/652
+
+	* Makefile.am (Makefile): MAINTAINER_MODE_TRUE でも依存関係をチェッ
+	クするように。
+
+2002-01-19  NOKUBI Takatsugu  <knok@daionet.gr.jp>
+
+	* navi2ch.texi (FAQ): part4 にあった質問をいくつかまとめた。
+
+2002-01-15  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi: 最新版に同期。
+	(Global Key Bindings): 新セクション。
+	(List Mode Key Bindings): 共通キーバインドを上記セクションに移動。
+	(Board Misc Mode Key Bindings): 新セクション。
+	(Board Mode Key Bindings): 共通キーバインドを上記セクションに移動。
+	(Bookmark Mode Key Bindings): 同上。
+
+2002-01-14  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* Makefile.am: automake が作る Makefile.in のように各行を \ でつな
+	いでみる。
+
+2002-01-13  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ): navi2ch-article.el の変更に対応。
+
+2002-01-12  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi (FAQ): 変数の設定方法では ~/navi2ch/init.el に言及
+	せず、Customize ノードへのクロスリファレンスを入れるようにした。
+	navi2ch-article-max-buffers について追加。
+
+	* ChangeLog: よく見たらこのファイル EUC じゃんよ、てことで JIS に
+	変更。
+
+2002-01-07  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* batch-texi2info.el (batch-texi2info): Emacs 21 のチェックをやめる。
+
+	* navi2ch.texi: Emacs 20 でもフォーマットできるよう、
+	@ifnottex -> @ifinfo
+	(About This Document): 削除。
+	(Getting): 入手方法を SourceForge に変更。
+	(Getting Develop Version): 新規ノード。
+	(Adding Bookmark): navi2ch 1.4 で修正されたので patch を削除。
+
+2002-01-05  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* batch-texi2info.el: 念のため、(set-language-environment) する。
+	(batch-texi2info): Emacs 21 以上を要求するようにした。
+	Info ファイルを書き出す際の coding system を JIS に。
+
+	* navi2ch.texi: @documentほにゃらら は HTML の時だけ有効にする。
+	(List Mode): Naci2ch カテゴリの板について追記。
+	(Search Thread): 新規ノード。スレの検索について追記。
+	(Other Boards File): etc.txt について若干追記。
+	そろそろセクション構成見直すべきか?
+
+	* batch-texi2info.el (batch-texi2info): 新ファイル (新関数)
+	なんで texi2info には batch モード用関数がないのよ、ってことで
+	texinfmt.el の batch-texinfo-format からコピペ。
+
+	* Makefile: やっぱ makeinfo の fill は変なので texinfo -> info に
+	は上記の関数を使って emacs で処理することにした。
+	TeX のテンポラリファイルをちゃんとリストアップ。
+
+2002-01-04  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi: SourceForge について追記。
+
+	* Makefile: .dvi を作成後に .log を消さないようにした。
+
+	* navi2ch.texi: 「このドキュメントについて」章を追加。
+	「Bookmark モード」セクションを追加。
+	キーバインドの node 名を「〜 Key Bindings」に統一。
+	2ストロークキーは間にスペースを入れた。＼C-? は C-? に変更。
+	クロスリファレンスをちょっと見直し。
+
+	* Makefile: tar 玉に ChangeLog を入れるようにした。
+
+	* ChangeLog: 新ファイル。
+
+	* navi2ch.texi: 56さんの書いてくれたマークとFAQをマージ。
+	http://pc.2ch.net/test/read.cgi/unix/1009340234/56
+
+	HTMLまわりを若干手直し。
+
+2002-01-03  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* .cvsignore: navi2ch.html も無視することに。
+
+	* navi2ch.texi: 若干クリーンナップ
+	makeinfoを使用することにしたので、@nodeでのクロスリファレンスを取
+	り除いた。
+	2chの表記を「２ちゃんねる」に統一。
+	HTMLも作ることにしたのでちょっと変更。(なんかmakeinfo --htmlって虫
+	がいるような気がする。)
+
+	* Makefile: HTMLも作成するようにした。(mamiさんのリクエスト)
+	infoを作成するのにmakeinfoを使用することにした。
+
+2002-01-02  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch.texi: Board モードの説明を若干充実
+
+	* Makefile: tar玉の作り方を若干変えた。
+	cleanで*.gzも消すようにした。
+
+	* Makefile: tar玉を作るとき、ディレクトリも含むようにした。
+	dviを作った後にディレクトリをきれいにする。

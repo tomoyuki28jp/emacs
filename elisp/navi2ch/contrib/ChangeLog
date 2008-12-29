@@ -1,0 +1,223 @@
+2004-12-30  SAITO Takuya  <tabmore@users.sourceforge.net>
+
+	* izonmoji-mode.el (izonmoji-mode-on):
+	buffer-display-table を上書きしないように。
+	http://pc5.2ch.net/test/read.cgi/unix/1085940686/876
+
+2004-10-10  mami  <mami@users.sourceforge.net>
+
+	* navi2ch-js-livedoor-move.el (navi2ch-js-livedoor-move):
+	jbbs.livedoor.com から jbbs.livedoor.jp への移転用に変更。
+	ホスト名を関数の最初に移動。
+
+2004-08-15  mami  <mami@users.sourceforge.net>
+
+	* navi2ch-js-livedoor-move.el: (provide ...) を先頭に。
+	(require ...) を追加。
+
+2004-08-15  mami  <mami@users.sourceforge.net>
+
+	* Makefile.am (EXTRA_DIST): navi2ch-js-livedoor-move.el を追加。
+
+	* navi2ch-js-livedoor-move.el (navi2ch-js-livedoor-move): 新ファイ
+	ル。
+
+2004-06-05  mami  <mami@users.sourceforge.net>
+
+	* navi2ch-logo.el (navi2ch-logo-update): APEL の put-alist を使わ
+	ないように。
+	http://pc5.2ch.net/test/read.cgi/unix/1085940686/36
+
+2004-01-30  mami  <mami@users.sourceforge.net>
+
+	* navi2ch-spamfilter.el: License term を記述。
+	http://pc.2ch.net/test/read.cgi/unix/1065246418/580
+	http://pc.2ch.net/test/read.cgi/unix/1065246418/638
+
+2003-12-21  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch-spamfilter.el (navi2ch-spamf-additional-token-flag):
+	新変数。
+	(navi2ch-article-bayesian-tokenizer): 上記変数が non-nil の場合
+	レスの日時、番号等をトークンとして追加する。
+
+2003-11-06  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch-spamfilter.el (navi2ch-article-bayesian-tokenizer): 現在
+	のレス番号がわかる時だけ num: を付けるように。
+	http://pc.2ch.net/test/read.cgi/unix/1065246418/264
+
+2003-11-04  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch-spamfilter.el (navi2ch-article-before-save-corpus-hook):
+	新変数。
+	(navi2ch-article-save-corpus): 上記 hook を実行するように。
+
+2003-10-20  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch-spamfilter.el (toplevel): navi2ch-exit-hook ではなく、
+	navi2ch-save-status-hook でコーパスを保存するように。
+	http://pc.2ch.net/test/read.cgi/unix/1065246418/136
+
+	* navi2ch-spamfilter.el: spamfilter.el 0.11 に対応。
+	http://pc.2ch.net/test/read.cgi/unix/1065246418/130
+
+2003-10-13  Nanashi San  <nanashi@users.sourceforge.net>
+
+	spamfilter.el 0.10 に対応。コーパスファイルのフォーマットが
+	変更になってますので各自変換してください。
+	http://pc.2ch.net/test/read.cgi/unix/1065246418/95
+	* navi2ch-spamfilter.el (navi2ch-spamf-preferred-major): 新変数。
+	(navi2ch-spamf-preferred-minor): 新変数。
+	(toplevel): 上記変数に応じて spamf-cvs-id をチェック。
+	(navi2ch-spamf-good-corpus): spamfilter 0.10 に対応。
+	(navi2ch-spamf-bad-corpus): 同上。
+	(navi2ch-article-spam-probability): 同上。
+	(navi2ch-article-show-spam-probability): 同上。
+	(navi2ch-article-save-corpus): 同上。
+	(navi2ch-article-load-corpus): 同上。
+
+2003-10-12  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch-spamfilter.el (navi2ch-spamf-good-corpus): 新変数。
+	(navi2ch-spamf-bad-corpus): 新変数。
+	(navi2ch-spamf-register-good-token): 上記変数を使うように。
+	(navi2ch-spamf-register-spam-token): 同上。
+	(navi2ch-spamf-register-good-token-list): 同上。
+	(navi2ch-spamf-register-spam-token-list): 同上。
+	(navi2ch-article-save-corpus): 同上。
+	(navi2ch-article-load-corpus): 同上。
+	(navi2ch-article-spam-probability): 同上。
+	(navi2ch-article-show-spam-probability): 同上。
+
+2003-10-12  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch-spamfilter.el: 新ファイル。
+
+	* Makefile.am (EXTRA_DIST): 上記を追加。
+
+	* README: 同上。
+
+2003-07-16  mami  <mami@users.sourceforge.net>
+
+	* README: Copyright 更新。
+
+	* izonmoji-mode.el: 同上。
+
+2003-02-22  SAITO Takuya  <tabmore@users.sourceforge.net>
+
+	* izonmoji-mode.el (toplevel): Commentary に JISX0213用のフォント
+	が必要であることを追加。
+
+2003-02-02  SAITO Takuya  <tabmore@users.sourceforge.net>
+
+	* izonmoji-mode.el (toplevel): izonmoji-shift_jis を
+	izonmoji-shift-jis に改名。
+
+2003-01-27  mami  <mami@users.sourceforge.net>
+
+	* navi2ch-pizaunix.el: 新ファイル。
+
+	* Makefile.am (EXTRA_DIST): 上記を追加。
+
+	* README: 同上。
+
+2003-01-21  SAITO Takuya  <tabmore@users.sourceforge.net>
+
+	* izonmoji-mode.el (toplevel): Wanderlust の設定例を追加
+	http://pc.2ch.net/test/read.cgi/unix/1039935998/314
+	(izonmoji-mac-display-list): 縦書き用の文字を追加
+	(izonmoji-mac-chars-list): 同上。
+	(toplevel): izonmoji-shift_jis を定義。
+
+2002-12-16  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* Makefile.am (EXTRA_DIST): izonmoji-mode.el、
+	navi2ch-track-mouse.el を追加。アルファベット順に sort。
+
+2002-11-17  SAITO Takuya  <tabmore@users.sourceforge.net>
+
+	* izonmoji-mode.el (izonmoji-mode-on): XEmacs-21.1 では、フェイスを
+	付けないように。 http://pc.2ch.net/test/read.cgi/unix/1031231315/772
+	(izonmoji-win-face): XEmacs-21.1 ではフェイスを付けないことを
+	docstring に追加。
+	(izonmoji-mac-face): 同上。
+
+2002-11-11  SAITO Takuya  <tabmore@users.sourceforge.net>
+
+	* izonmoji-mode.el (izonmoji-mode-on): XEmacs でも
+	izonmoji-{win,mac}-face を使うように。
+
+	* navi2ch-migemo.el (toplevel): euc-jp から iso-2022-jp に。
+
+2002-10-26  SAITO Takuya  <tabmore@users.sourceforge.net>
+
+	* izonmoji-mode.el (toplevel): 設定例に
+	navi2ch-popup-article-mode-hook を追加。
+
+2002-10-09  SAITO Takuya  <tabmore@users.sourceforge.net>
+
+	* navi2ch-jisx0213.el: 削除。
+
+	* izonmoji-mode.el: 新ファイル。
+
+	* README: navi2ch-jisx0213.el -> izonmoji-mode.el に。
+
+2002-10-06  Taiki SUGAWARA  <taiki.s@cityfujisawa.ne.jp>
+
+	* README: navi2ch-jisx0213 の typo を修正。
+
+2002-10-02  Taiki SUGAWARA  <taiki.s@cityfujisawa.ne.jp>
+
+	* navi2ch-jisx0213.el: XEmacs に対応。
+
+	* README: navi2ch-jisx0213 についての記述を追加。
+
+2002-10-01  Taiki SUGAWARA  <taiki.s@cityfujisawa.ne.jp>
+
+	* README: ちょいと記述を追加。
+
+	* navi2ch-jisx0213.el: 新ファイル。
+
+	* gikope.el (toplevel): cl を require するように。
+
+2002-10-01  Taiki SUGAWARA  <taiki.s@cityfujisawa.ne.jp>
+
+	いろいろ追加したので、適当に。
+	* gikope.el (gikope-list-*): AA の名前一覧表示、選択モード用のあれこれ。
+	(gikope-view-*): AA 表示用モードのあれこれ。
+	(gikope): 新コマンド。ギコペモードに入る。
+	他にも既存の関数を少し手直ししたりとか。
+
+2002-07-11  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* README: 新ファイル。各ファイルの簡単な説明。
+
+	* navi2ch-track-mouse.el: 新ファイル。
+
+2002-07-03  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* gikope.el (gikope-aa-buffer): バッファ名に変更。
+	(gikope-parse-aa): find-file-noselect-as-coding-system を使わない
+	ように。
+	http://pc.2ch.net/test/read.cgi/unix/1023884490/285 を当てた。
+
+2002-06-29  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* navi2ch-migemo.el (toplevel): バイトコンパイル時に migemo が必要
+	無いように、(require 'migemo) を eval で囲んだ。
+
+2002-06-28  Nanashi San  <nanashi@users.sourceforge.net>
+
+	* Makefile.am (EXTRA_DIST): navi2ch-migemo.el を追加。
+
+2002-02-05  NOKUBI Takatsugu  <knok@users.sourceforge.net>
+
+	* Makefile.am (EXTRA_DIST): gikope.el 追加。
+
+2002-01-06  Taiki SUGAWARA  <taiki.s@cityfujisawa.ne.jp>
+
+	* navi2ch-logo.el: ファイル追加。レス一覧の先頭にロゴを張る。
+	http://pc.2ch.net/test/read.cgi/unix/999166513/895
+
+$Id: ChangeLog,v 1.36 2004/12/30 09:31:47 tabmore Exp $

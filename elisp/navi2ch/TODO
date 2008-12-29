@@ -1,0 +1,12 @@
+順番は適当 
+
+・navi2ch-article-max-line, navi2ch-board-max-line をなんとかする
+・expire をちゃんと実装する。
+・過去ログをちゃんと見れるようにする(read.cgi でなんとかなる？)
+・フィルタをちゃんと実装する。
+・ツールチップでレスを表示
+・navi2ch2 の作成 :-)
+・board id、article id とか (URL も?) を文字列では無くシンボルにする。
+  equal ではなく eq で比較できるように。
+・順不同でかまわない alist を hash で置き換える。
+・board、article などを alist ではなく defstruct にする。

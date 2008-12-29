@@ -1,0 +1,2376 @@
+\input texinfo @c -*- mode: texinfo; coding: euc-japan -*-
+@comment %**start of header
+@setfilename navi2ch.info
+@settitle Navi2ch, Navigator for 2ch for Emacsen
+@set REVISION $Revision: 1.110 $
+@ifhtml
+@documentlanguage ja
+@end ifhtml
+@paragraphindent 0
+@c @setchapternewpage off
+@iftex
+@afourpaper
+@end iftex
+@finalout
+@footnotestyle end
+@comment %**end of header
+
+@dircategory 2ch
+@direntry
+* Navi2ch: (navi2ch).           Navigator for 2ch for Emacsen
+@end direntry
+
+@c commitする前にすること:
+@c  * C-c C-u C-a する。先頭に C-u をつけては@strong{いけない}。
+@c  * make した後、navi2ch.info を開いて @kbd{M-x Info-validate} する。
+
+@c infoファイルに変換するには、
+@c % makeinfo navi2ch.texi
+@c とするか、Emacs でこのファイルを開き、@kbd{M-x texi2info} とする。
+
+@copying
+Copyright @copyright{} 2002, 2003, 2004, 2005, 2006, 2007, 2008 by
+Navi2ch Project
+
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+@ignore
+Permission is granted to process this file through TeX and print the
+results, provided the printed document carries a copying permission
+notice identical to this one except for the removal of this paragraph
+(this paragraph not being relevant to the printed manual).
+
+@end ignore
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided that the
+entire resulting derived work is distributed under the terms of a
+permission notice identical to this one.
+
+Permission is granted to copy and distribute translations of this
+manual into another language, under the above conditions for modified
+versions, except that this permission notice may be stated in a
+translation approved by the Free Software Foundation.
+@end copying
+
+@titlepage
+@title Navi2ch
+@subtitle Navigator for 2ch for Emacsen
+@subtitle @value{REVISION}
+@author Navi2ch Project
+
+@page
+@vskip 0pt plus 1filll
+
+@insertcopying
+@end titlepage
+
+@contents
+
+@ifnottex
+@value{REVISION}
+
+@insertcopying
+
+@node Top
+@top Navi2ch
+
+Navi2ch は、Emacs、XEmacs、Meadow などの Emacsen で動作する、２ちゃん
+ねるナビゲータである。
+
+@menu
+* Install::                     インストール
+* Usage::                       使い方
+* Customize::                   カスタマイズ
+* Key Bindings::                キーバインド
+* FAQ::                         よくある質問とその答え
+* Thanks::                      謝辞
+
+@detailmenu
+ --- The Detailed Node Listing ---
+
+インストール
+
+* Getting::                     入手方法
+* Compile::                     コンパイル方法
+* Getting Develop Version::     開発版の入手
+
+使い方
+
+* Start Navi2ch::               起動方法
+* List Mode::                   List モード
+* Board Mode::                  Board モード
+* Bookmark Mode::               Bookmark モード
+* Article Mode::                Article モード
+* Message Mode::                Message モード
+
+Board モード
+
+* Updated Flag::                更新フラグ
+* State Flag::                  状態フラグ
+* Mark::                        マーク
+* Hide Thread::                 スレを隠す
+* Search Thread::               スレの検索
+
+Bookmark モード
+
+* Adding Bookmark::             ブックマークを追加する
+* Operating Bookmark::          ブックマークを操作する
+* Browsing Bookmark::           ブックマークを閲覧する
+
+Article モード
+
+* Article View Range::          スレの表示範囲
+* Article Message Filter::      レスのフィルタ処理
+
+Message モード
+
+* Saving Send Log::             送信控えをとる
+
+カスタマイズ
+
+* Emacs Customization Interface::  Emacs のカスタマイズインターフェイス
+                                   を利用する
+* Init File::                   初期化ファイル
+* Other Boards File::           その他のカテゴリに入れる板を追加する
+* Mona Font::                   モナーフォントを使う
+
+モナーフォントを使う
+
+* What is Mona Font::           モナーフォントって何よ?
+* How to Use Mona Font::        んで、どうやって使うの?
+
+キーバインド
+
+* Global Key Bindings::         すべてのモードで共通のキーバインド
+* List Mode Key Bindings::      List モードでのキーバインド
+* Board Misc Mode Key Bindings::  Board 系モード共通のキーバインド
+* Board Mode Key Bindings::     Board モードでのキーバインド
+* Bookmark Mode Key Bindings::  Bookmark モードでのキーバインド
+* Article Mode Key Bindings::   Article モードでのキーバインド
+* Message Mode Key Bindings::   Message モードでのキーバインド
+* Message Mode AA List::        Message モードでのアスキーアート一覧
+
+よくある質問とその答え
+
+* General Qestions::            全般
+* How to Read::                 読む
+* Can not Read::                読めない
+* Board Questions::             板関連
+* How to Write::                書き込む
+* Misc Questions::              その他
+
+@end detailmenu
+@end menu
+
+@end ifnottex
+
+@node Install
+@chapter インストール
+
+@menu
+* Getting::                     入手方法
+* Compile::                     コンパイル方法
+* Getting Develop Version::     開発版の入手
+@end menu
+
+@node Getting
+@section 入手方法
+@cindex 入手
+
+@uref{http://sourceforge.net/project/showfiles.php?group_id=39552}
+から最新の navi2ch-X.Y.Z.tar.gz を入手する。
+
+@uref{http://navi2ch.sourceforge.net/, Navi2ch Project Home Page}や
+@uref{http://sourceforge.net/projects/navi2ch/, Navi2ch Project
+Summary Page}も要チェック。
+
+@c 以前のリリースは作者の (not 1) さんのページから入手することができる。
+@c @uref{http://www.geocities.co.jp/SiliconValley-Oakland/7673/}
+@c (全部 sourceforge に移した方がいいかな。)
+
+２ちゃんねる UNIX 板、@uref{Navi2ch スレ,
+http://h.u.la/dance/?P=1&kenken=Navi2ch}も参照のこと。
+
+@node Compile
+@section コンパイル方法
+@cindex コンパイル
+@cindex configure
+
+@example
+@group
+% gzip -dc navi2ch-X.Y.Z.tar.gz | tar xvf -
+% cd navi2ch-X.Y.Z
+% ./configure; make
+# make install
+@end group
+@end example
+
+
+お終い@dots{} だけじゃあれなんで一応重要な configure のオプションを。
+
+@table @option
+@item --help
+configure のオプションを一覧表示。
+
+@item --with-lispdir
+Navi2ch をインストールするディレクトリを指定。
+
+@item --with-icondir
+アイコンなどの画像ファイルをインストールするディレクトリを指定。
+
+@item --infodir
+Info ファイルをインストールするディレクトリを指定。
+
+@item --with-packagedir
+Navi2ch をインストールするパッケージディレクトリを指定。(XEmacs のみ)
+@end table
+
+configure は以下の環境変数も使用する。
+
+@table @option
+
+@item EMACS
+emacs のコマンド名
+
+@item EMACSLOADPATH
+emacs がライブラリをさがすパス
+
+@end table
+
+例えば Meadow だったら以下のとおり。
+
+@example
+@group
+./configure EMACS=/meadow/bin/Meadow.exe --with-lispdir=/meadow/site-lisp/navi2ch
+@end group
+@end example
+
+XEmacs を使っていて、ホームディレクトリにインストールしたい場合は以下
+のようにするといいかも。
+
+@example
+@group
+./configure EMACS=xemacs --with-packagedir=$HOME/.xemacs/mule-packages
+@end group
+@end example
+
+サイトによっては、管理者がインストールした Lisp パッケージによって
+メッセージが表示され、configure がうまく動作しない場合がある。
+
+その際は @option{EMACS="xemacs -no-site-file"} などを加えると
+うまくインストールできるかもしれない。
+
+@subsection configure を使用しないでコンパイルする
+@cindex configure なしのコンパイル
+@cindex Windows でのコンパイル
+
+Cygwin をインストールしてない Windows など、configure を動作させること
+ができない環境では、以下のとおりするとコンパイルできるかもしれない。
+
+@enumerate
+@item
+@file{EMACS-TOP-DIR/site-lisp}@footnote{@file{EMACS-TOP-DIR} は
+@file{C:/Meadow} など、Emacs をインストールしたディレクトリ} の下に
+@file{navi2ch} というディレクトリを作成する。
+
+@item
+Navi2ch の配布物を全て上記のディレクトリにコピーする。
+
+@item
+@kbd{C-x C-f @key{RET} @file{上記ディレクトリ/bcomp.el} @key{RET}}
+と入力して @file{bcomp.el} を開く。
+
+@item
+@kbd{M-x eval-current-buffer @key{RET}} と入力して実行する。
+
+@item
+Emacs を立ち上げ直す。
+@end enumerate
+
+@node Getting Develop Version
+@section 開発版の入手
+@cindex 開発版
+@cindex CVS
+
+Navi2ch の開発に興味があるなら、CVS を使って開発版を入手することができる。
+@code{CVS password:} と聞いてきたら何も入力せず @kbd{@key{RET}} を押すこと。
+
+@example
+@group
+% cvs -d:pserver:anonymous@@navi2ch.cvs.sourceforge.net:/cvsroot/navi2ch login
+% cvs -z3 -d:pserver:anonymous@@navi2ch.cvs.sourceforge.net:/cvsroot/navi2ch co navi2ch
+@r{(それぞれ一行で入力)}
+@end group
+@end example
+
+checkout した後は @file{navi2ch} ディレクトリで
+
+@example
+@group
+% cvs update -Pd
+@end group
+@end example
+
+とすると最新版に同期することができる。configure した後であれば
+
+@example
+@group
+% make update
+@end group
+@end example
+
+このようにしてもいい。@footnote{GNU make 以外の make (例えば FreeBSD
+の標準 make など) では、Makefile ターゲットが更新されても、Makefile を
+再読み込みしないものがある。update ターゲットは、このようなシステムで
+もうまく動くよう、cvs update の後に Makefile を更新する。}
+
+CVS についての詳しい説明は
+@uref{http://www.cvshome.org/}
+などを参照。
+
+なお、開発版はあくまでも開発中のその時点でのスナップショットであり、
+リリース版の問題を解決した最新版というわけではない。
+
+開発者になると CVS に commit することができるようになる。
+@uref{http://sourceforge.net/projects/navi2ch/, Navi2ch Project
+Summary Page}から「プロジェクト管理者」にコンタクトを取って、ぜひ
+Navi2ch の開発に参加してほしい。
+
+@node Usage
+@chapter 使い方
+
+@menu
+* Start Navi2ch::               起動方法
+* List Mode::                   List モード
+* Board Mode::                  Board モード
+* Bookmark Mode::               Bookmark モード
+* Article Mode::                Article モード
+* Message Mode::                Message モード
+@end menu
+
+@node Start Navi2ch
+@section 起動方法
+@cindex 起動
+@cindex スプラッシュ
+@findex navi2ch
+
+@file{~/.emacs} に
+
+@lisp
+(autoload 'navi2ch "navi2ch" "Navigator for 2ch for Emacs" t)
+@end lisp
+
+と書く。
+
+@kbd{M-x navi2ch @key{RET}} で起動。
+
+Windows では 環境変数 @env{TZ} を @code{JST-9} としておいた方がいいらしい。
+
+起動時のスプラッシュは `navi2ch-display-splash-screen' で制御できる。
+
+@node List Mode
+@section List モード
+@cindex List モード
+@cindex 板一覧
+@cindex 「Navi2ch」カテゴリ
+@cindex 「ファイル一覧」板
+@cindex 「表示スレ一覧」板
+@cindex 「検索一覧」板
+@cindex 「履歴」板
+@cindex お気にいりの板
+@cindex 「ブックマーク」カテゴリ
+@cindex 「その他」カテゴリ
+@cindex 「変わった板」カテゴリ
+
+Navi2ch を起動すると以下のような画面になる。
+
+@example
+@group
+[+]Navi2ch
+[+]ブックマーク
+[+]その他
+[+]変わった板
+        :
+@end group
+@end example
+
+カーソルを @code{[+]ＰＣ等} の行に移動して @kbd{@key{SPC}} を押すと、
+サブメニューが開いて以下のようになる。
+
+@example
+@group
+[-]ＰＣ等
+  Windows
+  Mac
+  新・mac
+        :
+  昔のPC
+@end group
+@end example
+
+UNIX 板を読みたいなら、カーソルを @code{UNIX} の行に移動して
+@kbd{@key{SPC}} を押す。
+
+板の名前の上で @kbd{a} を押すと、その板をブックマークに追加する。
+@kbd{b} で板一覧とブックマークの表示を交互に切替えることができる。(グ
+ローバルブックマーク (@ref{Bookmark Mode}) とは違うので注意。)
+
+List モードでは、基本的に２ちゃんねるの板がカテゴリごとに並んでいるが、
+先頭の4つのカテゴリに属する板は特殊な板である。
+
+@example
+@group
+[-]Navi2ch
+  ファイル一覧
+  表示スレ一覧
+  検索一覧
+  履歴
+[+]ブックマーク
+[+]その他
+@end group
+@end example
+
+「Navi2ch」カテゴリの板は以下のとおり。
+
+@itemize @bullet
+@item
+「ファイル一覧」には最後に表示したディレクトリのスレの一覧が保存されてい
+る。ディレクトリのスレの一覧は @kbd{C-c C-f} を押した後、ディレクトリを
+指定する事で表示できる。
+
+@item
+「表示スレ一覧」には現在のセッションで表示したスレの一覧が追加される。
+
+@item
+「検索一覧」には最後に行った検索の結果が保存されている。検索については
+Board モード (@ref{Board Mode}) を参照のこと。
+
+@item
+「履歴」には (現在のセッションに限らず) 表示したスレの一覧が追加される。
+@end itemize
+
+以上の4つの板には Navi2ch が自動的にスレを追加していくが、それ以外はグ
+ローバルブックマークと同等である。@xref{Browsing Bookmark}.
+
+「ブックマーク」カテゴリにはグローバルブックマークが含まれる。
+@xref{Bookmark Mode}.
+
+「その他」カテゴリには自分で追加した板が含まれる。@xref{Other Boards
+File}.
+
+「変わった板」カテゴリには前回 Navi2ch 起動してから追加された板、移転
+した板が含まれる。
+
+@node Board Mode
+@section Board モード
+@cindex Board モード
+@cindex スレ一覧
+@cindex 板別ブックマーク
+
+板を開くとその板にあるスレの一覧が以下のような画面で表示される。
+
+@c @TeX{} で処理するとこの図がずれるんだが、どうにかならんかなあ。
+@c @multitable を使ってみたが、今度はHTMLでずれる。欝氏。
+
+@c @verbatim を使うといいかも?
+@example
+@group
+ 16 +C くだらない質問はここに書き込め！なんでもアリ4     ( 636)
+ 17 =C*navi2ch for emacs (part 4)                        (  50)
+ 18  U おい、イブの夜にUnixいじってるうんこども！        ( 101)
+  ^ ^^^                        :
+  | |||                     タイトル                     レス数
+  | ||+- マーク
+  | |+-- 状態フラグ
+  | +--- 更新フラグ
+  +----- スレ番号
+@end group
+@end example
+
+最初の項から、「スレ番号」、「更新フラグ」、「状態フラグ」、「マーク」、
+「タイトル」、「レス数」となる。
+
+読みたいスレにカーソルを移動し @kbd{@key{SPC}} を押すとそのスレを読む
+ことができる。
+
+スレの上で @kbd{a} を押すと、そのスレをブックマークに追加する。@kbd{b}
+でスレ一覧とブックマークの表示を交互に切替えることができる。(グローバ
+ルブックマーク (@ref{Bookmark Mode}) とは違うので注意。)
+
+@kbd{?} を押すと、スレを検索することができる。@xref{Search Thread}.
+
+@menu
+* Updated Flag::                更新フラグ
+* State Flag::                  状態フラグ
+* Mark::                        マーク
+* Hide Thread::                 スレを隠す
+* Search Thread::               スレの検索
+@end menu
+
+@node Updated Flag
+@subsection 更新フラグ
+@cindex 更新フラグ
+@cindex `%'
+@cindex `+'
+@cindex `='
+
+更新フラグの意味は以下のとおり。
+
+@table @code
+@item %
+新しい、以前その板を開いたときにはなかったスレ。
+
+@item +
+以前その板を開いてから更新されたスレ。@kbd{+} を押すと、更新されたスレ
+と新しいスレのみの一覧を表示できる。
+
+@item =
+以前その板を開いてから更新されていないスレ。その他の更新フラグのスレを
+開くとこれに変わる。
+
+@item (空白)
+このフラグは (空白なんだけども) 状態フラグ (@code{VCU}) の有無によって
+意味が変化する。
+
+@code{C} などの状態フラグが立っているときは以前その板を開いたとき、更
+新されたのに読まずにいたスレで、状態フラグが何も立っていないときは一度
+も読んだことのないスレという意味。
+@end table
+
+@node State Flag
+@subsection 状態フラグ
+@cindex 状態フラグ
+@cindex `V'
+@cindex `C'
+@cindex `U'
+
+状態フラグの意味は以下のとおり。
+
+@table @code
+@item V
+現在 Navi2ch で buffer を持っている (表示されている) スレ。
+
+@item C
+ローカルにキャッシュがあるスレ。
+
+@item U
+@kbd{i} を押して更新された (buffer は無いかもしれない) スレ。
+
+@item (空白)
+読んだことも @kbd{i} で更新したこともないスレ。
+@end table
+
+@node Mark
+@subsection マーク
+@cindex マーク
+@cindex `*'
+
+スレをマークすることで、いくつものスレをまとめて処理することができる。
+マークしたスレには @code{*} が表示される。
+
+@example
+@group
+ 16 +C くだらない質問はここに書き込め！なんでもアリ4     ( 636)
+ 17 =C*navi2ch for emacs (part 4)                        (  50)
+ 18  U おい、イブの夜にUnixいじってるうんこども！        ( 101)
+     ^^                        :
+     ||
+     |+- マーク
+     +-- 状態フラグ
+@end group
+@end example
+
+@kbd{*} を押すとカーソル行のスレがマークされる。すべてのスレをマークし
+たいときは @kbd{m a} を使う。また、リージョンを指定した上で @kbd{m r}
+を押せばリージョン内のすべてのスレをマークできる。
+
+マークを解除したいときには目的のスレの上で @kbd{u} を押す。
+
+@kbd{m i} と入力するとマークしたスレを更新する。ブックマークで登録した
+スレを @kbd{m a} で全選択してから更新するととても楽だ。
+
+@kbd{m i} で更新して、レスが増えていたスレには状態フラグに @code{U} が
+立つ。更新されていなければ表示は変化しない。
+
+@node Hide Thread
+@subsection スレを隠す
+@cindex スレを隠す
+@cindex スレッドあぼーん
+
+しょーもないスレは見たくない、目に入るのもいやだ、という時はスレを隠す機
+能が便利。
+
+@kbd{d} を押すことでカーソル上のスレを隠すことができる。一度隠したスレは
+記憶され、次回に起動した時も表示されない。
+
+後になって隠したスレをまた見たくなったら、@kbd{h} を押すことで隠したスレ
+の一覧を見るモードに移行できる。再度 @kbd{h} を押せば元の(表示したいスレ
+だけを見る)モードに戻る。
+
+隠したスレを見るモードで @kbd{d} を押せば、カーソル上の隠したスレを再度
+通常モードで見られるようにできる。
+
+ここに挙げた以外のキー操作はBoard モードでのキーバインド (@ref{Board
+Mode Key Bindings}) を参照してちょ。
+
+@node Search Thread
+@subsection スレの検索
+@cindex スレの検索
+@cindex 取得済のスレ一覧
+
+Navi2ch ではキャッシュを対象にスレ検索することができる。
+
+ボードモードで @kbd{?} を押すと
+@code{Search for: s)ubject a)rticle c)ache o)rphan}
+と聞いて来るので、スレのタイトルのみを対象に検索を行うなら @kbd{s} を、
+スレの内容を対象に検索を行うなら @kbd{a} を押す。@kbd{c} を押すと検索
+を行わず、結果はキャッシュが存在するスレすべてになる。@kbd{o} を押すと
+キャッシュが存在するが、板からもグローバルブックマークからも参照されて
+いないスレが結果となる。
+
+次に @code{Search from: b)oard a)ll} と聞いて来るので、現在開いている
+板 (Board モードの場合) やカーソルのある行のスレが属する板 (Bookmark
+モード等の場合) を対象に検索するなら @kbd{b} を、すべての板を対象に検
+索するなら @kbd{a} を押す。すべての板を対象にスレの内容を検索するには
+かなり時間がかかるので注意。
+
+スレの内容の検索はローカルのキャッシュを対象とするので、検索対象とした
+いスレの内容をあらかじめキャッシュに取り込んでおくこと。
+
+検索結果は Bookmark モードとよく似た Search モードバッファに表示される。
+@xref{List Mode}, @xref{Bookmark Mode}.
+
+@node Bookmark Mode
+@section Bookmark モード
+@cindex Bookmark モード
+@cindex グローバルブックマーク
+@cindex 特殊な板
+@cindex 仮想的な板
+@cindex Articles モード
+@cindex Search モード
+@cindex History モード
+
+グローバルブックマークとは、いくつかのスレをまとめた、仮想的な板 (のよ
+うなもの) である。
+
+その他の特殊な板 (Articles モード、Search モード、History モード) につ
+いても Bookmark モードと同等であるので、この章を参照してほしい。
+@xref{List Mode}.
+
+@menu
+* Adding Bookmark::             ブックマークを追加する
+* Operating Bookmark::          ブックマークを操作する
+* Browsing Bookmark::           ブックマークを閲覧する
+@end menu
+
+@node Adding Bookmark
+@subsection ブックマークを追加する
+@cindex ブックマークの追加
+
+Board モード (@ref{Board Mode}) や Article モード(@ref{Article Mode})
+で @kbd{A} を押すことで、そのスレをグローバルブックマークに追加するこ
+とができる。
+
+Board モードでは、@kbd{m A} を使用することでマークを付けたスレをまとめ
+て追加することもできる。@xref{Mark}.
+
+ブックマークを追加する際、@code{bookmark id:} には追加したいグローバル
+ブックマークのブックマーク ID を、@code{Input bookmark name for
+[@var{BOOKMARK-ID}]:} にはそのブックマーク ID の名前を入力する。
+
+@c 板IDの説明がほしい
+
+@node Operating Bookmark
+@subsection ブックマークを操作する
+@cindex グローバルブックマークの編集
+@cindex グローバルブックマークの削除
+
+List モード (@ref{List Mode}) では、同じブックマーク ID を持つスレをま
+とめて、ブックマークカテゴリに属する一つ板のように表示される。
+
+@example
+@group
+[+]Navi2ch
+[-]ブックマーク
+  navi2ch for emacs
+[+]その他
+@end group
+@end example
+
+ブックマークのある行にカーソルを置いて @kbd{C} を押すとそのブックマー
+クを編集でき、@kbd{D} を押すとそのブックマークを削除できる。
+
+@node Browsing Bookmark
+@subsection ブックマークを閲覧する
+@cindex グローバルブックマークの閲覧
+@cindex グローバルブックマークの並べかえ
+
+ブックマークを開くと、Board モード (@ref{Board Mode}) とよく似た
+Bookmark モードになる。
+
+@example
+@group
+  1  V navi2ch for emacs (part 4)                        [UNIX]
+  2  C 2ch専用ブラウザ「Navi2ch」                        [UNIX]
+  3  U ナビ兄ちゃん                                      [UNIX]
+  ^  ^^                        :
+  |  ||                     タイトル                       板
+  |  |+- マーク
+  |  +-- 状態フラグ
+  +----- スレ番号
+@end group
+@end example
+
+Board モードとの違いは以下のとおり。
+
+@itemize @bullet
+@item
+レス数の代わりにスレが属する板が表示される。
+
+@item
+前回開いた時点でのレス数と比較されないため、更新フラグは存在しない。
+
+@item
+@kbd{C-k}、@kbd{C-y} を使ってカットアンドペーストすることで表示する順
+番を変えられる。
+@end itemize
+
+その他のキー操作は Bookmark モードでのキーバインド (@ref{Bookmark Mode
+Key Bindings}) を参照のこと。
+
+@node Article Mode
+@section Article モード
+@cindex Article モード
+@cindex スレッド表示
+@cindex アンカー参照
+@cindex ジャンプ先から戻る
+
+スレを開くと上下2つのペインに分かれ、上にはスレ一覧が、下にはそのスレ
+の内容が以下のように表示される。
+
+@example
+@group
+From: [1] 名無しさん＠お腹いっぱい。 <>
+Date: 01/12/26 13:17
+
+Emacsenで動く2ch用ブラウザ、navi2chスレッドpart 4です。
+はたしてsourceforgeでの共同開発は実現するのか。
+
+* 作者の(not 1)さんのページ
+ http://www.geocities.co.jp/SiliconValley-Oakland/7673/
+
+>>2 リンク、過去スレッド
+>>3 インストール、起動のしかた(READMEから抜粋)
+________________________________________
+
+From: [2] 名無しさん＠お腹いっぱい。 <>
+Date: 01/12/26 13:17
+
+リンク
+                        :
+@end group
+@end example
+
+@kbd{@key{SPC}}/@kbd{@key{DEL}} で次/前のページ、@kbd{n}/@kbd{p} で
+次/前のレスに移動するので、適当に読み進める。
+
+スレを隠す(@ref{Hide Thread}) 時と同様に、 @kbd{d} でレスを隠すことがで
+きる。通常の一覧モードと隠したレスだけを見るモードへの移行 @kbd{h} でで
+き、隠したレスを見るモードで @kbd{d} を押せばまた通常モードでみることが
+できるようになる。
+
+特定のレスをブックマークしたい場合は、カーソルをそのレスに合わせた上で
+@kbd{a} を押す。ブックマークされたレスを見るには @kbd{$} を押す。再度
+@kbd{$} を押せば元のレス一覧状態に戻る。
+
+Navi2ch には、@code{>>1} などのように記述された他のレス参照や、
+@code{http://} で始まるリンクなどを楽に追いかけられる機能が用意されてい
+る。@kbd{@key{TAB}} を押すことで、カーソルより後にあるそれらのリンクに移動でき、
+その状態で @kbd{@key{RET}} を押すことで該当する番号のレスに飛んだり、参照して
+いる URL を引数にブラウザを呼び出したりできる。
+レス参照したのち、@kbd{l} を押すことで元のレスに戻ることができる。
+また、戻りすぎたら @kbd{L} を押すことで逆方向に戻る事ができる。
+
+レスを書きたい時は @kbd{w} (age で書く時) または @kbd{W} (sage で書く
+時) を押す。
+
+@kbd{?} を押すと、レスを検索することができる。
+名前 (name)、メール (mail)、日付 (date)、ID (id)、本文 (body) から
+検索条件を選び、検索したい文字列を入力する。
+パーズ済みのメッセージのみを検索対象とするので、あらかじめ
+検索したい範囲のメッセージを表示しておくこと。
+
+検索結果の表示バッファでは、@kbd{D} を押すと表示されているレスをまとめ
+て隠すことができ、@kbd{A} を押すと同様にまとめてブックマークすることが
+できる。また、これらの操作の対象にしたくないレスがあるときは、@kbd{d}
+でカーソル位置のレスを除外することができる。間違って除外してしまったと
+きは、@kbd{C-u d} でレスが復活する。
+
+@menu
+* Article View Range::          スレの表示範囲
+* Article Message Filter::      レスのフィルタ処理
+@end menu
+
+@node Article View Range
+@subsection スレの表示範囲
+@cindex スレの表示範囲
+@vindex navi2ch-article-auto-range
+@vindex navi2ch-article-new-message-range
+@vindex navi2ch-article-exist-message-range
+
+Navi2ch では、スレ中のすべてのレスを一度に処理するのは負荷が高いため、
+表示するスレを一部のレスのみにすることができる。
+
+デフォルトでは、そのスレを初めて開いた場合は先頭の 100 レスと最後のレ
+ス、以前開いた事がある場合は先頭のレスと最後の 100 レスが表示される。
+この動作を変えたい場合は @code{navi2ch-article-auto-range}、
+@code{navi2ch-article-new-message-range}、
+@code{navi2ch-article-exist-message-range} を変更する。@xref{Customize}.
+
+現在表示中のスレの表示領域を変えたい場合は @kbd{r} を押す。
+
+@node Article Message Filter
+@subsection レスのフィルタ処理
+@cindex レスのフィルタ処理
+@cindex あぼーん
+@cindex フィルタの有効/無効の切り替え
+@cindex 置換えの有効/無効の切り替え
+@vindex navi2ch-article-message-replace-below
+@vindex navi2ch-article-message-hide-below
+@vindex navi2ch-article-message-add-important-above
+
+Navi2ch には、名前や本文中の語句など、レスに含まれる特定の文字列を条件
+としてフィルタする機能が用意されている。
+
+スレ閲覧中に @kbd{!} を押すと、
+
+@enumerate
+@item
+名前 (name)、メール欄 (mail)、ID (id)、ホスト名/IP (hostname)、本文
+(body)、スレのタイトル (subject) のうち、どの項目でフィルタするか。
+
+@item
+レスを検査する方法を、拡張形式によってくわしく指定する (Use extended
+matching) か。
+
+拡張形式で指定する場合、部分一致 (substring)、あいまい一致(fuzzy)、完
+全一致 (exact)、正規表現 (regexp) のうち、どの方法を使うか。
+
+その際、大文字と小文字の違いは無視する (Ignore case) か。
+文字列一致の真偽を逆転して判定する (Invert match) か。
+
+その他のオプション(判定順位上げ(float)と、フィルタ有効範囲(scope))を指
+定するか。
+
+判定順位上げを指定する時は、決して上げない(never)か、常に上げる
+(always)か、デフォルト動作(default)か。
+
+フィルタ有効範囲を指定する時は、板内のみ(board-local)か、スレ内のみ
+(article-local)か、デフォルト動作(default)か。
+
+@item
+どんな文字列をフィルタ対象にするか。
+
+@item
+条件が一致したレスに対し、置き換える (replace)、隠す (hide)、ブックマー
+クする (important)、点数を加える (score) のうち、どの処理をおこなうか。
+
+置き換える場合は、どう置き換えるか。
+点数を加える場合は、何点加えるか。
+
+@item
+設定したフィルタを閲覧中のスレに今すぐ反映させるか。
+@end enumerate
+
+が順番に質問され、これに答えていくと、対応する変数の設定値が自動的に更
+新される。
+
+複数の項目、例えばスレのタイトルとレス本文の両方を条件としてフィルタし
+たい場合は、まずスレタイと本文によってレスに点数を付け、つぎに合計点数
+によってレスがうまくフィルタされるように、
+@code{navi2ch-article-message-replace-below}、
+@code{navi2ch-article-message-hide-below}、
+@code{navi2ch-article-message-add-important-above} を設定するとよい。
+@xref{Customize}.
+
+スレ閲覧中に @kbd{F} を押すと、フィルタの有効・無効を切り替えることが
+できる。また、デフォルトではフィルタ処理の結果はキャッシュされ、一度検
+査されたレスは再度検査されないようになっているが、フィルタ処理の条件を
+変更したときなどあらためてレスを検査したい場合には、@kbd{C-u F} を押す
+とキャッシュが更新される。
+
+カーソル位置のレスがフィルタにより置き換えられていた場合、@kbd{x} を押
+すとそのレスの置き換えの有効・無効を切り替えることができる。
+
+@node Message Mode
+@section Message モード
+@cindex Message モード
+@cindex レスを書く
+@cindex レス引用
+@cindex AA入力
+
+レスを書く際は画面が上下2つのペインに分かれ、上にはこれまで見ていたス
+レが、下には Message モード が表示される。
+
+@example
+@group
+From:
+Mail:
+----------------
+@point{}
+@end group
+@end example
+
+@code{From:} の後にハンドルを、@code{Mail:} の後に必要なら
+@code{sage} を入力し、@code{----------------} の次の行からレスを書く。
+
+@kbd{C-c C-y} と入力すると、見ていたレスを以下のように引用することがで
+きる。@kbd{C-u C-c C-y} と入力すると、見ていたレスの番号だけを引用する。
+
+@example
+@group
+>>5
+> さっそくそのSRをmonitor設定しときました。
+> はやく登録されるといいですね。
+@end group
+@end example
+
+@kbd{C-c C-a 英字キー} でアスキーアートを入力 (@ref{Message Mode AA
+List}) したりして、思う存分煽り文句を書いたら、@kbd{C-c C-c} で書き込
+みを完了する。
+
+書き込みをキャンセルするには、@kbd{C-c C-k} と入力する。
+
+書き込み中に他のスレを見るなどで別な (Navi2ch の)
+バッファに移動したときは、@kbd{C-c C-o}
+で元の「上のバッファが書き込むスレ、下のバッファでレスを書く」の状態に戻せる。
+
+`navi2ch-message-samba24-show' が t ならば、 samba24 が解除されるまでに
+あと何秒かかるかを mode-line に表示してくれる。
+
+@menu
+* Saving Send Log::             送信控えをとる
+@end menu
+
+@node Saving Send Log
+@subsection 送信控えをとる
+@cindex 送信控え
+@vindex navi2ch-message-save-sendlog
+
+自分の書いたレスを保存しておくことができる。
+ただし、デフォルトでは控えをとらない。
+
+控えをとるには、カスタマイズインターフェイス
+(@ref{Emacs Customization Interface}) を利用して
+@code{navi2ch-message-save-sendlog} を non-nil にするか、
+初期化ファイル (@ref{Init File}) に以下のように書いておく。
+
+@lisp
+(setq navi2ch-message-save-sendlog t)
+(add-to-list 'navi2ch-list-navi2ch-category-alist
+              navi2ch-message-sendlog-board)
+@end lisp
+
+このようにすると、「Navi2ch」カテゴリに「送信控え」板が追加される。
+@xref{List Mode}.
+
+@subsection 送信控えのレスの表示
+@vindex navi2ch-message-sendlog-message-format-function
+
+送信控えのレスの表示はデフォルトでは以下のようになっている。
+
+@example
+@group
+Subject: Navi2ch for Emacs (Part 14)
+URL: http://pc5.2ch.net/test/read.cgi/unix/1106152504/
+
+hide されたやつの表示をちょっと変えてみました。
+不満があったらどうぞ。
+____________________________________________________________
+@end group
+@end example
+
+板名も表示したいと思うなら以下のように設定すればいい。
+
+@lisp
+(setq navi2ch-message-sendlog-message-format-function
+      'navi2ch-message-sendlog-message-format-with-board-name)
+@end lisp
+
+すると、送信控えのレスが以下のようになる。
+
+@example
+@group
+[UNIX]: Navi2ch for Emacs (Part 14)
+URL: http://pc5.2ch.net/test/read.cgi/unix/1106152504/
+
+hide されたやつの表示をちょっと変えてみました。
+不満があったらどうぞ。
+____________________________________________________________
+@end group
+@end example
+
+
+@node Customize
+@chapter カスタマイズ
+@cindex カスタマイズ
+
+@menu
+* Emacs Customization Interface::  Emacs のカスタマイズインターフェイス
+                                   を利用する
+* Init File::                   初期化ファイル
+* Other Boards File::           その他のカテゴリに入れる板を追加する
+* Mona Font::                   モナーフォントを使う
+@end menu
+
+@node Emacs Customization Interface
+@section Emacs のカスタマイズインターフェイスを利用する。
+@cindex Emacs のカスタマイズインターフェイス
+
+Navi2ch のカスタマイズをしたい場合は、@kbd{M-x customize-group
+@key{RET} navi2ch @key{RET}} と入力する。customization buffer の使い方
+については Emacs のマニュアルを参照してね。
+
+@node Init File
+@section 初期化ファイル
+@cindex 初期化ファイル
+@cindex @file{~/.navi2ch/init.el}
+
+Navi2ch は起動時に @file{~/.navi2ch/init.el} をロードする。
+
+Navi2ch の起動時に色んな処理をしたい場合や、Emacs のカスタマイズインター
+フェイスなんか使ってられるかゴルァという人は、このファイルを編集する。
+
+存在しない場合は自分で作成すること。
+
+@node Other Boards File
+@section その他のカテゴリに入れる板を追加する
+@cindex 外部板
+@cindex @file{~/.navi2ch/etc.txt}
+
+２ちゃんねるに板が追加された後も List モードに板が表示されない場合や、
+２ちゃんねると互換性のある BBS を Navi2ch で読みたい場合は、
+@file{~/.navi2ch/etc.txt} というファイルを作成すると Navi2ch から読む
+ことができる。
+
+書式は以下のとおり。
+
+@example
+@group
+板の名前
+板の URL
+板の ID
+    :    (以下3行ずつ同様に続ける)
+@end group
+@end example
+
+たとえばニュース速報＋板を追加するには、@file{~/.navi2ch/etc.txt} に以
+下のように書く。
+
+@example
+@group
+ニュース速報＋
+http://news.2ch.net/newsplus/
+newsplus
+@end group
+@end example
+
+「板の名前」には List モードで表示したい名前を、「板の URL」にはその板
+をブラウザで表示した際の URL から先頭の
+@code{http://@var{ホスト}/@var{ディレクトリ}/} の部分を、板の ID には
+その板を一意に識別できる単語 (大抵は @var{ディレクトリ} でおっけー) を
+使用する。
+
+@node Mona Font
+@section モナーフォントを使う
+@cindex モナーフォント
+
+GNU Emacs 21 や XEmacs ではレスを表示する際、アスキーアートフレンドリー
+(藁) なモナーフォントというフォントを使うことができる。
+
+@menu
+* What is Mona Font::           モナーフォントって何よ?
+* How to Use Mona Font::        んで、どうやって使うの?
+@end menu
+
+@node What is Mona Font
+@subsection モナーフォントって何よ?
+
+モナーフォントは２ちゃんねるのアスキーアートを見るために作られたフリー
+のフォントです。
+
+詳しくは @uref{http://monafont.sourceforge.net/} を参照のこと。
+
+注:IPAモナーフォントとは別のものです。
+
+@node How to Use Mona Font
+@subsection んで、どうやって使うの?
+@cindex 特定のスレ/板だけでモナーフォントを使う
+@cindex 特定のスレ/板ではモナーフォントを使わない
+@vindex navi2ch-mona-enable
+@vindex navi2ch-mona-face-variable
+@vindex navi2ch-mona-enable-board-list
+@vindex navi2ch-mona-disable-board-list
+@vindex navi2ch-mona-enable-article-list
+@vindex navi2ch-mona-disable-article-list
+
+
+GNU Emacs 21 や XEmacs でモナーフォントを使いたい場合は
+@file{~/.navi2ch/init.el} に以下のように書いておく。@xref{Init File}.
+
+@lisp
+(setq navi2ch-mona-enable t)
+@end lisp
+
+これですべての板でモナーフォントが使われる。
+
+もし、これでも表示されない場合は
+
+@lisp
+(setq navi2ch-mona-face-variable 'navi2ch-mona16-face)
+@end lisp
+
+を追記すると表示されるかもしれない。
+@footnote{ちなみに、@code{navi2ch-mona16-face} の 16 の部分は 12, 14
+を指定する事もできる。}
+
+特定の板でのみモナーフォントを使いたいときは、上記に加えて
+以下の例のように @code{navi2ch-mona-enable-board-list} に
+板の ID のリストを入れておく。
+@footnote{つまり、以前のバージョンとは異なり、navi2ch-mona-enable が
+non-nil であっても、指定した板でしかモナーフォントが使われないというこ
+となので注意。}
+
+@lisp
+(setq navi2ch-mona-enable-board-list '("mona" "aastory" "kao"))
+@end lisp
+
+いずれの場合も、特定の板でモナーフォントを使いたくないときは、
+以下の例のように @code{navi2ch-mona-disable-board-list} に
+板の ID のリストを入れておけば、その板ではモナーフォントは使われない。
+
+@lisp
+(setq navi2ch-mona-disable-board-list '("unix" "linux" "network"))
+@end lisp
+
+さらに、特定のスレでモナーフォントを使いたいときは
+以下の例のように @code{navi2ch-mona-enable-article-list} に
+板の ID とスレの ID の alist を入れておく。
+
+@lisp
+;; http://pc.2ch.net/test/read.cgi/unix/1037275862/
+;; http://pc.2ch.net/test/read.cgi/linux/1037806127/
+(setq navi2ch-mona-enable-article-list '(("unix" . "1037275862")
+					 ("linux" . "1037806127")))
+@end lisp
+
+また、特定のスレでモナーフォントを使いたくないときは
+以下の例のように @code{navi2ch-mona-disable-article-list} に
+板の ID とスレの ID の alist を入れておく。
+
+@lisp
+;; http://aa.2ch.net/test/read.cgi/mona/1047715077/
+;; http://aa.2ch.net/test/read.cgi/aastory/1032888547/
+(setq navi2ch-mona-disable-article-list '(("mona" . "1047715077")
+					  ("aastory" . "1032888547")))
+@end lisp
+
+これらのスレごとの設定は板ごとの設定より優先される。
+
+なお、Navi2ch 1.5.1 かそれ以前のバージョンでモナーフォントを使用したい場合は
+次のように書く必要がある。
+
+@lisp
+(when (eq window-system 'x)
+  (require 'navi2ch-mona)
+  (add-hook 'navi2ch-article-arrange-message-hook
+            'navi2ch-mona-arrange-message)
+  (setq navi2ch-mona-enable t))
+@end lisp
+
+残念ながら、GNU Emacs 20 では可変幅フォントを使用することができないの
+でモナーフォントは使用できない。
+
+@node Key Bindings
+@appendix キーバインド
+
+@menu
+* Global Key Bindings::         すべてのモードで共通のキーバインド
+* List Mode Key Bindings::      List モードでのキーバインド
+* Board Misc Mode Key Bindings::  Board 系モード共通のキーバインド
+* Board Mode Key Bindings::     Board モードでのキーバインド
+* Bookmark Mode Key Bindings::  Bookmark モードでのキーバインド
+* Article Mode Key Bindings::   Article モードでのキーバインド
+* Message Mode Key Bindings::   Message モードでのキーバインド
+* Message Mode AA List::        Message モードでのアスキーアート一覧
+@end menu
+
+@node Global Key Bindings
+@appendixsec すべてのモードで共通のキーバインド
+
+以下のキーバインドはすべてのモードで使用できる。ただし、モードで上書き
+されている場合はそちらに従う。
+
+@table @kbd
+@item C-c C-f
+@code{navi2ch-find-file} スレのログファイルまたはログファイルが保存され
+ているディレクトリを指定
+
+@item C-c C-t
+@code{navi2ch-toggle-offline} オフライン・オンラインの切り替え
+
+@item C-c C-u
+@code{navi2ch-goto-url} 指定した URL の板・スレを表示
+
+@item C-c C-v
+@code{navi2ch-version} Navi2ch のバージョンをミニバッファに表示
+
+@item C-c C-o
+@code{navi2ch-message-jump-to-message-buffer} レスを書いてる途中なら、
+レスを書くバッファと書き込むスレ/板のバッファに切り替え
+
+@item C-c C-l
+@code{navi2ch-be2ch-toggle-login} Be@@2chへのログイン状態の切り替え
+@end table
+
+Message モード以外では以下のキーバインドも使える。ただし、モードで上書
+きされている場合はそちらに従う。
+
+@table @kbd
+@item 1
+@code{navi2ch-one-pane} 1ペイン表示に切り替え
+
+@item 2
+@code{navi2ch-two-pane} 2ペイン表示に切り替え
+
+@item 3
+@code{navi2ch-three-pane} 3ペイン表示に切り替え
+
+@item <
+@code{beginning-of-buffer} バッファの最初に移動
+
+@item >
+@code{navi2ch-end-of-buffer} バッファの最後に移動
+
+@item B
+@code{navi2ch-bookmark-goto-bookmark} Bookmark モードを表示
+
+@item g
+@code{navi2ch-goto-board} 指定した板を表示
+
+@item G
+@code{navi2ch-goto-board} 指定した板を表示
+
+@item n
+@code{next-line} 次の行に移動
+
+@item p
+@code{previous-line} 前の行に移動
+
+@item t
+@code{navi2ch-toggle-offline} オフライン・オンラインの切り替え
+
+@item V
+@code{navi2ch-version} Navi2ch のバージョンをミニバッファに表示
+@end table
+
+@node List Mode Key Bindings
+@appendixsec List モードでのキーバインド
+
+@table @kbd
+@item @key{RET}
+@code{navi2ch-list-select-current-board} 板を表示
+
+@item q
+@code{navi2ch-exit} Navi2ch を終了
+
+@item z
+@code{navi2ch-suspend} Navi2ch を中断
+
+@item s
+@code{navi2ch-list-sync} 板リストを再読み込み
+
+@item @key{SPC}
+@code{navi2ch-list-select-current-board} 板を表示
+
+@item @key{DEL}
+@code{scroll-down} 下にスクロール
+
+@item @key{BS}
+@code{scroll-down} 下にスクロール
+
+@item a
+@code{navi2ch-list-add-bookmark} 板をブックマークに登録
+
+@item b
+@code{navi2ch-list-toggle-bookmark} ブックマークと板リストの表示を切り替え
+
+@item [mouse-2]
+@code{navi2ch-list-mouse-select} 板を表示
+
+@item /
+@code{navi2ch-list-toggle-open} 板リストの開閉
+
+@item [
+@code{navi2ch-list-open-all-category} すべての板リストを開く
+
+@item ]
+@code{navi2ch-list-close-all-category} すべての板リストを閉じる
+
+@item D
+@code{navi2ch-list-delete-global-bookmark} グローバルブックマークを削除
+
+@item C
+@code{navi2ch-list-change-global-bookmark} グローバルブックマークを編集
+
+@item ?
+@code{navi2ch-list-search} 検索
+
+@item e
+@code{navi2ch-list-expire} 古いキャッシュファイルを削除する
+@end table
+
+@node Board Misc Mode Key Bindings
+@appendixsec Board 系モード共通のキーバインド
+
+@table @kbd
+@item @kbd{RET}
+@code{navi2ch-bm-select-article} スレを表示
+
+@item [mouse-2]
+@code{navi2ch-bm-select-article} スレを表示
+
+@item @kbd{SPC}
+@code{navi2ch-bm-select-article-or-scroll-up} スレを表示 (すでに表示し
+ているスレならばスレ画面を上にスクロール)
+
+@item .
+@code{navi2ch-bm-display-article} スレを表示 (カーソルはスレに移動しな
+い)
+
+@item i
+@code{navi2ch-bm-fetch-article} スレを更新
+
+@item e
+@code{navi2ch-bm-textize-article} スレをテキストで保存
+
+@item @key{DEL}
+@code{navi2ch-bm-select-article-or-scroll-down} スレを表示 (すでに表示
+しているスレならばスレ画面を下にスクロール)
+
+@item @key{BS}
+@code{navi2ch-bm-select-article-or-scroll-down} スレを表示 (すでに表示
+しているスレならばスレ画面を下にスクロール)
+
+@item n
+@code{navi2ch-bm-next-line} 次の行に移動
+
+@item p
+@code{navi2ch-bm-previous-line} 前の行に移動
+
+@item U
+@code{navi2ch-board-show-url} 板またはスレの URL をコピー、または板を
+ブラウザで表示
+
+@item l
+@code{navi2ch-bm-view-logo} 板のロゴを表示
+
+@item A
+@code{navi2ch-board-add-global-bookmark} グローバルブックマークに登録
+
+@item q
+@code{navi2ch-bm-exit} 板を閉じる
+
+@item S
+@code{navi2ch-bm-sort} スレをソート
+
+@item ?
+@code{navi2ch-bm-search} 検索
+
+@item C-c C-m
+@code{navi2ch-message-pop-message-buffer} 書き込みのとき書き込み画面に
+戻る
+
+@item R
+@item C-c C-r
+@code{navi2ch-bm-remove-article} スレの情報 (取得した .dat ファイルや既読情報など) を消す
+
+@item C-o
+@code{navi2ch-bm-save-dat-file} .dat ファイルを保存
+
+@item I
+@code{navi2ch-bm-fetch-maybe-new-articles} 更新されている可能性のあるスレをすべて更新
+
+@item *
+@code{navi2ch-bm-mark} スレにマークをつける
+
+@item u
+@code{navi2ch-bm-unmark} スレのマークを解除
+
+@item m r
+@code{navi2ch-bm-mark-region} 選択領域のスレにマークをつける
+
+@item m a
+@code{navi2ch-bm-mark-all} すべてのスレにマークをつける
+
+@item m A
+@code{navi2ch-bm-add-global-bookmark-mark-article} マークしたスレをグ
+ローバルブックマークに登録
+
+@item m .
+@code{navi2ch-bm-display-mark-article} マークしたスレを表示
+
+@item m i
+@code{navi2ch-bm-fetch-mark-article} マークしたスレを更新
+
+@item m e
+@code{navi2ch-bm-textize-mark-article} マークしたスレをテキストで保存
+
+@item m m
+@code{navi2ch-bm-mark-marks} ある状態 (VCU) になっているスレをマーク
+
+@item m ?
+@code{navi2ch-bm-mark-by-query} 正規表現にマッチするスレを問い合わせつ
+つマーク (という動作だと思う)
+
+@item m b
+@code{navi2ch-bm-add-bookmark-mark-article} マークしたスレをローカルブッ
+クマークに登録
+
+@item m R
+@code{navi2ch-bm-remove-mark-article} マークしたスレの情報
+(取得した .dat ファイルや既読情報など) を消す
+
+@end table
+
+@node Board Mode Key Bindings
+@appendixsec Board モードでのキーバインド
+
+Board 系モード共通のキーバインドも参照。@xref{Board Misc Mode Key Bindings}.
+
+@table @kbd
+@item s
+@code{navi2ch-board-sync} 板を再読み込み
+
+@item r
+@code{navi2ch-board-select-view-range} スレの表示数を変更
+
+@item a
+@code{navi2ch-board-add-bookmark} 板のブックマークにスレを登録
+
+@item d
+@code{navi2ch-board-hide-article} スレを隠す
+
+@item h
+@code{navi2ch-board-toggle-hide} 隠したスレを表示
+
+@item +
+@code{navi2ch-board-toggle-updated} 更新されたスレのみ表示
+
+@item b
+@code{navi2ch-board-toggle-bookmark} ブックマークを表示
+
+@item w
+@code{navi2ch-board-write-message} スレを立てる
+
+@item @key{ESC} e
+@code{navi2ch-board-expire} 古いキャッシュファイルを削除する
+
+@item m d
+@code{navi2ch-board-hide-mark-article} マークしたスレを隠す
+@end table
+
+@node Bookmark Mode Key Bindings
+@appendixsec Bookmark モードでのキーバインド
+
+Board 系モード共通のキーバインドも参照。@xref{Board Misc Mode Key Bindings}.
+
+@table @kbd
+@item D
+@code{navi2ch-bookmark-delete} ブックマークを削除
+
+@item d
+@code{navi2ch-bookmark-cut} ブックマークをカットし、キルリングに追加
+
+@item C-k
+@code{navi2ch-bookmark-cut} ブックマークをカットし、キルリングに追加
+
+@item C-y
+@code{navi2ch-bookmark-yank} キルリングからブックマークを張り付け
+
+@item o
+@code{navi2ch-bookmark-move} 別のブックマークに移動
+
+@item O
+@code{navi2ch-bookmark-copy} 別のブックマークにコピー
+
+@item m d
+@code{navi2ch-bookmark-cut-mark-article} マークしたスレをカットし、キルリングに追加
+
+@item m o
+@code{navi2ch-bookmark-move-mark-article} マークしたスレを別のブックマークに移動
+
+@item s
+@code{navi2ch-bookmark-sync} ブックマークバッファを最新の情報に更新
+
+@item X
+@code{navi2ch-bookmark-remember-order} ブックマークの現在のスレの並び順を記憶
+
+@item S
+@code{navi2ch-bookmark-sort} スレをソート
+@end table
+
+@node Article Mode Key Bindings
+@appendixsec Article モードでのキーバインド
+
+@table @kbd
+@item q
+@code{navi2ch-article-exit} スレを閉じる
+
+@item Q
+@code{navi2ch-article-goto-current-board} そのスレのある板を表示
+
+@item s
+@code{navi2ch-article-sync} スレを再読み込み
+
+@item S
+@code{navi2ch-article-sync-disable-diff} スレを差分なしで読み込み
+
+@item r
+@code{navi2ch-article-redraw-range} レスの表示数を変更
+
+@item j
+@code{navi2ch-article-few-scroll-up} 一行上へスクロール
+
+@item k
+@code{navi2ch-article-few-scroll-down} 一行下へスクロール
+
+@item @key{SPC}
+@code{navi2ch-article-scroll-up} 一画面上へスクロール
+
+@item @key{DEL}
+@code{navi2ch-article-scroll-down} 一画面下へスクロール
+
+@item @key{BS}
+@code{navi2ch-article-scroll-down} 一画面下へスクロール
+
+@item w
+@code{navi2ch-article-write-message} レスを書き込む
+
+@item W
+@code{navi2ch-article-write-sage-message} レスを sage で書き込む
+
+@item @key{RET}
+@code{navi2ch-article-select-current-link} リンクを表示
+
+@item [mouse-2]
+@code{navi2ch-article-mouse-select} リンクをマウスで選択
+
+@item g
+@code{navi2ch-article-goto-number-or-board} 指定したレスか板にジャンプ
+
+@item l
+@code{navi2ch-article-pop-point} 記憶されたカーソル位置にジャンプ
+
+@item L
+@code{navi2ch-article-pop-poped-point} 記憶したカーソル位置に逆方向に
+ジャンプ
+
+@item m
+@code{navi2ch-article-push-point} 現在のカーソル位置を記憶
+
+@item U
+@code{navi2ch-article-show-url} スレ・特定のレス・板の URL をコピー、
+あるいはブラウザで表示
+
+@item .
+@code{navi2ch-article-redisplay-current-message} カーソルのあるレスを
+バッファの一番上に移動
+
+@item p
+@code{navi2ch-article-previous-message} ひとつ前のレスに移動
+
+@item n
+@code{navi2ch-article-next-message} 次のレスに移動
+
+@item P
+@code{navi2ch-article-through-previous} ひとつ上のスレに移動
+
+@item N
+@code{navi2ch-article-through-next} ひとつ下のスレに移動
+
+@item @key{SHIFT} @key{TAB}
+@code{navi2ch-article-previous-link} ひとつ前のリンクに移動
+
+@item @key{ESC} @key{TAB}
+@code{navi2ch-article-previous-link} ひとつ前のリンクに移動
+
+@item @key{TAB}
+@code{navi2ch-article-next-link} 次のリンクに移動
+
+@item >
+@code{navi2ch-article-goto-last-message} 最後のレスに移動
+
+@item <
+@code{navi2ch-article-goto-first-message} 最初のレスに移動
+
+@item @key{ESC} d
+@code{navi2ch-article-decode-message} 記事をデコードする。
+
+@item @key{ESC} i
+@code{navi2ch-article-auto-decode-toggle-text} 自動デコードした内容の表示を
+切り換える。
+
+@item v
+@code{navi2ch-article-view-aa} アスキーアートを表示 (要 aadisplay)
+
+@item f
+@code{navi2ch-article-forward-buffer} 次のバッファに移動
+
+@item b
+@code{navi2ch-article-backward-buffer} 前のバッファに移動
+
+@item d
+@code{navi2ch-article-hide-message} カーソルのあるレスを隠す・(@kbd{h}
+のあと) 隠したレスを戻す・(@kbd{$} のあと) レスをブックマークから削除
+
+@item a
+@code{navi2ch-article-add-important-message} カーソルのあるレスをブッ
+クマークに登録
+
+@item h
+@code{navi2ch-article-toggle-hide} 隠したレスの表示とスレの表示の切り
+替え
+
+@item $
+@code{navi2ch-article-toggle-important} スレのブックマークを表示
+
+@item A
+@code{navi2ch-article-add-global-bookmark} スレをグローバルブックマークに登録
+
+@item C-c C-m
+@code{navi2ch-message-pop-message-buffer} 書き込みのとき書き込み画面に
+戻る
+
+@item i
+@code{navi2ch-article-fetch-link} リンク先のスレを更新
+
+@item G
+@code{navi2ch-article-goto-board} 指定した板に移動
+
+@item e
+@code{navi2ch-article-textize-article} スレをテキストで保存
+
+@item ?
+@code{navi2ch-article-search} レスを検索
+
+@item C-o
+@code{navi2ch-article-save-dat-file} .dat ファイルを保存
+
+@item F
+@code{navi2ch-article-toggle-message-filter} レスに対するフィルタ処理の
+有効・無効を切り替える
+
+@item x
+@code{navi2ch-article-toggle-message-filter} カーソルのあるレスに対する
+レス置換の有効・無効を切り替える
+
+@item !
+@code{navi2ch-article-add-message-filter-rule} レスに対する
+フィルタ処理の条件を対話的に追加する
+
+@item C-c C-r
+@code{navi2ch-article-remove-article} スレの情報 (取得した .dat ファイルや既読情報など) を消す
+
+@item u
+@code{navi2ch-article-show-url-at-point} カーソルの下の URL を表示し、
+キルリングにコピーする。
+
+@end table
+
+@node Message Mode Key Bindings
+@appendixsec Message モードでのキーバインド
+
+@table @kbd
+@item C-c C-c
+@code{navi2ch-message-send-message} 書き込みを送信
+
+@item C-c C-k
+@code{navi2ch-message-exit} 書き込みをキャンセル
+
+@item C-c C-y
+@code{navi2ch-message-cite-original} カーソルのあるレスを引用
+
+@item C-c y
+@code{navi2ch-message-cite-original-from-number} 番号で指定したレスを
+引用
+
+@item C-c C-i
+@code{navi2ch-message-insert-backup} 前回書いたレスを挿入
+
+@item C-c C-b
+@code{navi2ch-base64-insert-file} ファイルを base64 エンコードして挿入
+
+@item @key{ESC} t
+@code{navi2ch-toggle-offline} オフライン・オンラインの切り替え
+
+@item C-c C-a ?
+@code{navi2ch-message-insert-aa} アスキーアートのリストを表示して入力
+@end table
+
+@node Message Mode AA List
+@appendixsec Message モードでのアスキーアート一覧
+
+Message モードで、@kbd{C-c C-a} に続いて下記のキーを押すことで２ちゃん
+ねる特有のアスキーアートを入力することができる。@kbd{C-c C-a ?} を押す
+と、アスキーアートのリストを表示することができる。
+
+(ホントは半角カナ (って何ですか?) が使われてるんだけど、色々不都合があ
+るのでここでは全角ね。)
+
+@table @kbd
+@comment START-OF-AA-LIST
+@item a
+@samp{(´Д｀)}
+
+@item b
+@samp{ヽ(`Д´)ノ}
+
+@item B
+@samp{(((；゜Д゜))ガクガクブルブル}
+
+@item f
+@samp{( ´_ゝ`)フーン}
+
+@item e
+@samp{(⊃д`)}
+
+@item F
+@samp{(´ー｀)}
+
+@item g
+@samp{(゜Д゜)ゴルァ}
+
+@item G
+@samp{ガ━━(゜Д゜;)━━ソ!}
+
+@item h
+@samp{(゜Д゜)ハァ?}
+
+@item H
+@samp{(;´Д｀)ハァハァ}
+
+@item i
+@samp{(・∀・)イイ!!}
+
+@item I
+@samp{(・Ａ・)イクナイ!!}
+
+@item j
+@samp{(・∀・)ジサクジエンデシタ}
+
+@item k
+@samp{キタ━━━━━━(゜∀゜)━━━━━━ !!!!!}
+
+@item K
+@samp{キタ━(゜∀゜)━( ゜∀)━( 　゜)━(　　)━(゜ 　)━(∀゜ )━(゜∀゜)━!!!!}
+
+@item m
+@samp{(´∀｀)}
+
+@item M
+@samp{ヽ(´▽｀)ノ}
+
+@item n
+@samp{(￣ー￣)ニヤリッ}
+
+@item N
+@samp{(´-`).。ｏＯ(なんでだろう？)}
+
+@item p
+@samp{（　゜д゜）ポカーン}
+
+@item s
+@samp{Σ（゜д゜lll）ガーン}
+
+@item S
+@samp{(´・ω・`)ショボーン}
+
+@item t
+@samp{y=ー( ゜д゜)・∵.　ターン}
+
+@item u
+@samp{(゜д゜)ウマー}
+
+@item U
+@samp{(-＿-)ウツダ}
+
+@comment END-OF-AA-LIST
+@end table
+
+@node FAQ
+@appendix よくある質問とその答え
+
+@menu
+* General Qestions::            全般
+* How to Read::                 読む
+* Can not Read::                読めない
+* Board Questions::             板関連
+* How to Write::                書き込む
+* Misc Questions::              その他
+@end menu
+
+@node General Qestions
+@appendixsec 全般
+
+@table @asis
+
+@item Q.
+Navi2ch って何？
+
+@item A.
+２ちゃんねる専用ブラウザです。Emacs、XEmacs、Meadow などの Emacsen で
+動作します。
+
+@item Q.
+Emacs の起動と同時に Navi2ch を起動したいんだけど。
+
+@item A.
+@code{emacs -e navi2ch} あるいは @code{emacs -f navi2ch} でどうぞ。
+
+@item Q.
+オフラインで起動したいんだけど。
+
+@item A.
+@kbd{C-u M-x navi2ch @key{RET}} でどうぞ。
+
+@item Q.
+@code{Cannot open load file} が出て起動できないんだけど。
+
+@item A.
+ロードパスが正しく設定されてないかも。@file{~/.emacs} を確認してね。
+
+@item Q.
+○○を△△にしたいんだけど。
+
+@item A.
+とりあえず @file{navi2ch-vars.el} っていうファイルを見てみてね。
+それか @kbd{M-x customize-group @key{RET} navi2ch @key{RET}} するか。@xref{Customize}.
+
+@item Q.
+何々しようとしたらほにゃららってエラーが出るんだけど。
+
+@item A.
+まず、一度 Emacs を終了し、再度立ち上げ直してから Navi2ch を起動してみ
+てちょ。それでもエラーが出るようなら、
+
+@kbd{M-x set-variable @key{RET} debug-on-error @key{RET} t @key{RET}}
+
+して、エラーが起きた時の @code{*Backtrace*} バッファの内容を２ちゃんね
+るの Navi2ch スレで報告してね。その際、使ってる Emacs の種類やバージョ
+ン、Navi2ch のバージョン (CVS 版を使ってる時は ChangeLog の一番最後に
+あるリビジョン) も教えてくれると対応が早いかも。
+
+@item Q.
+「ディレクトリのロックに失敗しました。」って言われるんだけどこれ何?
+
+@item A.
+Navi2ch を同時に複数起動すると、@file{~/.navi2ch/} の整合性が取れなく
+なっちゃうので、ロックファイルを作成しています。ロックファイルの作成に
+失敗すると、他に Navi2ch を起動している可能性があるのでこのメッセージ
+が表示されます。
+
+ただ、Navi2ch の起動中に Emacs を強制終了したりするとロックファイルが
+残ってしまい、この警告が表示される場合があります。その際は Navi2ch を
+複数起動しようとしていないことを確認した後、「もう一度試しますか?」の
+問いに @code{n} (この問いはバージョンによっては削除されています)、
+「危険を承知で続けますか?」の問いに @code{yes} と答えてください。
+
+@item Q.
+@code{connection failed: operation already in progress, navi2ch.sourcefoge.net, navi2ch connection}
+って出て起動できないんだけど…。
+
+@item A.
+とりあえずこうしとけば？
+@lisp
+(setq navi2ch-open-network-stream-function
+      #'navi2ch-open-network-stream-with-retry)
+@end lisp
+
+@end table
+
+@node How to Read
+@appendixsec 読む
+
+@table @asis
+
+@item Q.
+@code{>>1} みたいなリンクで飛んでったあとに元のレスに戻りたいんだけど。
+
+@item A.
+@kbd{l} で戻れます。
+
+@item Q.
+スレを開くと一部のレスしか表示されないよ。全部読みたいんだけど。
+
+@item A.
+@kbd{r 0} でどうよ。詳しくは @ref{Article View Range} を見てね。
+
+@item Q.
+スレを開いたときにデフォルトで全件表示させたいんだけど。
+
+@item A.
+変数 @code{navi2ch-article-auto-range} の値を @code{nil} に設定します。
+@xref{Customize}.
+
+@item Q.
+複数のスレを巡回したいんだけど。
+
+@item A.
+@kbd{*} とか @kbd{m a} とか @kbd{m r} でスレにマークをつけて、@kbd{m i}
+でおっけー。@xref{Mark}.
+
+@item Q.
+URL を指定してスレを開きたいんだけど。
+
+@item A.
+@kbd{C-c C-u} でどうぞ。
+
+@item Q.
+article を開くときに一画面で開いて欲しいんだけど。
+
+@item A.
+以下の設定をして下さい。
+@lisp
+(setq navi2ch-bm-stay-board-window nil)
+@end lisp
+
+@item Q.
+Navi2ch をずっと使ってると Emacs のメモリ使用量がとんでもないことにな
+るんだけど。
+
+@item A.
+たぶんスレのバッファがどんどん増えているのが原因。
+@kbd{M-x navi2ch-article-expunge-buffers @key{RET}} とすると、
+スレのバッファの数が変数 @code{navi2ch-article-max-buffers}
+の値を越えていたときにバッファが削除される。
+また、変数 @code{navi2ch-article-auto-expunge} を
+@code{nil} 以外 (@code{t} とか) に設定すると
+スレを開いたときに自動的にバッファの最大数が上記の値に制限される。@xref{Customize}.
+
+@end table
+
+@node Can not Read
+@appendixsec 読めない
+
+@table @asis
+
+@item Q.
+鯖がご機嫌斜めみたいで @code{now connect...} のまま止まってんだけど、
+どうにかならない?
+
+@item A.
+@kbd{C-g} で中止できます。
+
+@item Q.
+スレを読み込んでも @code{file is not updated} と出て表示されないんだけ
+ど。普通のブラウザだと見れる。どーしてくれるん？
+
+@item A.
+@kbd{C-u S} で強制読み込みしてみてね。
+
+@item Q.
+スレ開き中 C-g してニッチもサッチもいかなくなったらどうするの?
+
+@item A.
+@kbd{C-u s} で強制的に更新する。
+
+@item Q.
+ある板で @code{checking file...moved} と出て、スレ一覧が更新されない。
+
+@item A.
+以下3つのどれかでどうすか?
+@lisp
+(setq navi2ch-board-enable-readcgi nil
+      navi2ch-board-use-subback-html nil)
+@end lisp
+@lisp
+(setq navi2ch-board-enable-readcgi nil
+      navi2ch-board-use-subback-html t)
+@end lisp
+@lisp
+(setq navi2ch-board-enable-readcgi t)
+@end lisp
+それか板移転があったのかも。@xref{Board Questions}.
+
+@item Q.
+ある板でスレを読むと @code{checking file...moved} と出て、スレが更新されない。
+
+@item A.
+以下2つのどっちかでどうすか?
+@lisp
+(setq navi2ch-enable-readcgi nil)
+@end lisp
+@lisp
+(setq navi2ch-enable-readcgi t)
+@end lisp
+それか板移転があったのかも。@xref{Board Questions}.
+
+@end table
+
+@node Board Questions
+@appendixsec 板関連
+
+@table @asis
+
+@item Q.
+同じ 2ch タイプの他の掲示板も Navi2ch で読みたいんだけど。
+
+@item A.
+@file{~/.navi2ch/etc.txt} というファイルを作って、以下のように書きます。
+
+@example
+@group
+---------- ここから -----------
+板の名前
+http://hoge.2ch.net/fuga/
+fuga
+---------- ここまで -----------
+@end group
+@end example
+
+これでその板が板一覧の「その他」に追加されます。サーバ移転なら本家の板
+リスト (@code{bbstable}) が更新されるまでの辛抱です。@xref{Other
+Boards File}.
+
+@item Q.
+突然とある板が更新されなくなったみたいなんだけど。
+
+@item A.
+２ちゃんねるで板の移転があったのかも。
+まずは
+運用情報板 (@uref{http://qb5.2ch.net/operate/}) の
+「新設板・板移動情報」スレや
+新・かちゅ〜しゃ板 (@uref{http://azlucky.s31.xrea.com/katjusha/}) で
+移転情報をチェックしよう。
+
+移転だったら、List モードで @kbd{s} してみよう。
+移転情報が板リスト (@code{bbstable}) に反映されていればこれで読めるはず。
+反映されてなかったら、反映されるまでの間は
+@kbd{C-c C-u} で新しい板の URL を入力して読んでね。
+
+いちいち URL を入れるのがめんどうなときは、
+Navi2ch 1.7.3 以降なら
+変数 @code{navi2ch-list-moved-board-alist} で新旧 URL を変換できるよ。
+
+@lisp
+(setq navi2ch-list-moved-board-alist
+      '(("http://pc.2ch.net/unix/" . "http://pc3.2ch.net/unix/")
+        ("http://pc.2ch.net/linux/" . "http://pc3.2ch.net/linux/")))
+@end lisp
+
+などとして、List モードで @kbd{C-u s}。
+キーの部分は板 URL と完全マッチなので、@file{~/.navi2ch/board.txt} を
+見てそれと同じように書いてね。
+
+Navi2ch 1.7.3 より古いバージョンを使ってる場合、この方法は使えないので
+@file{~/.navi2ch/etc.txt} を駆使してがんばれ。
+
+@item Q.
+違う板リスト (@code{bbstable}) を見るようにしたいんだけど。
+
+@item A.
+変数 @code{navi2ch-list-bbstable-url} の値を板リストの URL に設定しま
+す。@code{nil} に設定すると本家のものを使用します。@xref{Customize}.
+
+本家の他、有志がメンテナンスしている板リストが
+AzLucky さんの
+「２ちゃんねる閲覧ソフト用 ボード一覧」
+(@uref{http://azlucky.s25.xrea.com/})
+のページにいろいろあるよ。
+
+@end table
+
+@node How to Write
+@appendixsec 書き込む
+
+@table @asis
+
+@item Q.
+せっかく長文のレスを書いたのに、書き込みに失敗して書いたレスのバッファが
+消えちゃった。
+さっき書いたレスをなんとかして戻せない?
+
+@item A.
+@kbd{w} で Message モードに入って @kbd{C-c C-i} でおっけー。
+
+@item Q.
+レスを書き込むときの名前を設定したい。
+
+@item A.
+変数 @code{navi2ch-message-user-name} に名前の文字列を設定する。
+@xref{Customize}.
+板ごとに違う名前を使いたいときはこんな感じで。
+@lisp
+(setq navi2ch-message-user-name-alist
+      '(("network" . "anonymous")
+        ("tv" . "名無しさん")))
+@end lisp
+
+板のデフォルトの「名無しさん」を使いたいときは空文字列 @code{""} を設定する。
+(Navi2ch 1.7 以降ではデフォルトで空文字列)
+これだと板によって書き込めなかったり名前が fusianasan になったりするので注意。
+
+@item Q.
+前にレスを書いたときの名前を覚えていてほしくないんだけど。
+
+@item A.
+変数 @code{navi2ch-message-remember-user-name} の値を @code{nil} に設
+定します。@xref{Customize}.
+
+@item Q.
+スレ立てたいんだけど。
+
+@item A.
+Board モードで @kbd{w} で立てられるけど、板によってはだめかも。
+そのときはブラウザで立ててください。スマソ。
+
+@item Q.
+「ＥＲＲＯＲ：もうちょっと落ち着いて書きこみしてください。」って怒られ
+ちゃう。
+
+@item A.
+時計を合わせましょう。
+
+@end table
+
+@node Misc Questions
+@appendixsec その他
+@c 未分類、環境依存、細かい話、など
+
+@table @asis
+
+@item Q.
+使ってると @file{~/.navi2ch/} がどんどん大きくなるんだけど。
+
+@item A.
+List モードで @kbd{e} か Board モードで @kbd{M-e} すると一定期間より古い
+ファイルを削除できるよ。
+
+@item Q.
+あぼーんをいちいち聞かんでくれや
+
+@item A.
+変数 @code{navi2ch-net-save-old-file-when-aborn} の値を @code{nil} に
+します。@xref{Customize}.
+
+@item Q.
+プロクシ通したいんだけど。
+
+@item A.
+変数 @code{navi2ch-net-http-proxy} の値を @code{"127.0.0.1:8080"} のよ
+うにします。
+
+認証が必要なプロクシを使う時には、さらに
+@code{navi2ch-net-http-proxy-userid}、
+@code{navi2ch-net-http-proxy-password} も追加。
+
+環境変数 @env{HTTP_PROXY} を設定することでもプロクシを利用できます。大文
+字である点に注意。この変数には、URL のような書式を設定します。例えば前述
+と同じ設定を行なうのであれば、@code{http://127.0.0.1:8080/} という値を設
+定します。@xref{Customize}.
+
+@item Q.
+proxy を使って書きこんでると、時間帯によって送信に失敗することが
+あるみたいだけど?
+
+@item A.
+２ちゃんねる側の規制で、80番ポートが listen されていたりすると
+不正 proxy とみなされることがあるので、web サーバを落とすなり
+パケットフィルタリングで２ちゃんねるからの接続のみを落とすなり
+すると動くかも。
+
+@item Q.
+Meadow + Cygwin でうまく動かないことがあるんだけど。
+
+@item A.
+古い gzip では問題があるので、gzip を更新すると直るかも。
+もしくは
+@lisp
+(setq navi2ch-enable-readcgi nil)
+(setq navi2ch-net-accept-gzip nil)
+@end lisp
+として gzip を使わないという方法もあるけど、２ちゃんねるにネットワーク的
+負荷がかかるので素人にはお勧めできない。
+
+@item Q.
+「変わった板」って何?
+
+@item A.
+前回 Navi2ch を実行してから変更があった板のことです。新たに追加された
+り、サーバが移転になった板がこのカテゴリに含まれます。変な板のことでは
+ありません。
+
+@item Q.
+URL を w3m.el で開きたいんだけど。
+
+@item A.
+@lisp
+(setq browse-url-browser-function 'w3m-browse-url)
+@end lisp
+
+@item Q.
+board mode で + をすると hide したスレッドも出てくるんだけど。
+
+@item A.
+@lisp
+(setq navi2ch-board-hide-updated-article t)
+@end lisp
+すれば出てこなくなる。
+
+@item Q.
+スレバッファで TAB 押してリンクに飛ぶとすっげー重いんだけど。
+
+@item A.
+@lisp
+(setq navi2ch-article-get-url-text nil)
+@end lisp
+すれば軽くなるかも。(Navi2ch 1.6 以降)
+
+@item Q.
+bookmark モードで sort しても、次にブックマークを開くと元の並び順に戻っ
+てる。
+なんとかならん?
+
+@item A.
+sort 後に @kbd{X} で現在の並び順を記憶する。
+それもめんどうなら、
+@lisp
+(setq navi2ch-bookmark-remember-order-after-sort t)
+@end lisp
+しておくと sort 後の並び順をいつでも記憶するようになる。
+
+@item Q.
+板のローカルルールって見れない?
+
+@item A.
+@lisp
+(require 'navi2ch-head)
+@end lisp
+しといて @kbd{H} でどうよ。
+
+@item Q.
+sssp を見てみたい。
+
+@item A.
+URL のとこで RET を押せばブラウザが開いて見れますし、
+@lisp
+(add-hook 'navi2ch-article-mode-hook 'navi2ch-article-show-sssp-icon)
+@end lisp
+としておくと、スレ表示の中に画像が展開されますよ。
+
+@item Q.
+Samba24 の規正解除はいつだろう?
+
+@item A.
+@lisp
+(setq navi2ch-message-samba24-show t)
+@end lisp
+しておくと mode-line に残り時間が表示されますよ。
+
+@item Q.
+Be を使いたい。
+
+@item A.
+@kbd{C-c C-l} するとログイン/ログアウトを切替えできます。
+@lisp
+(setq navi2ch-be2ch-mail-address "メールアドレス"
+      navi2ch-be2ch-password "パスワード")
+@end lisp
+としておくと、メールアドレスとパスワードの質問を省略できます。
+
+@item Q.
+勝手にブラウジングが中止されたんだけど。
+
+@item A.
+@lisp
+(setq navi2ch-enable-status-check nil)
+@end lisp
+すればいいよ。
+
+@item Q.
+グローバルブックマークの'I'って時間かかるし、waitかかるよね。
+
+@item A.
+@lisp
+(setq navi2ch-bookmark-fetch-mark-article-check-update t)
+@end lisp
+しておくと、更新されてないスレはマークを外してくれるよ。
+また、
+@lisp
+(setq navi2ch-net-enable-http11 t)
+@end lisp
+しておくと、同じサーバへの接続を持続してくれる。
+
+@item Q.
+Emacs 23 で「〜」が投稿できない気がするんだけど。
+
+@item A.
+@lisp
+(define-translation-table 'my-cp932-encode (list (cons 12316 65374)))
+(coding-system-put 'cp932 :encode-translation-table 
+		   'my-cp932-encode)
+@end lisp
+としておくといいかも。
+
+@ignore
+@item Q.
+ふーん、Navi2ch って便利なんだね。ところで２ちゃんねるって何？
+
+@item A.
+あなたには Navi2ch は必要ないかもです。
+@end ignore
+@end table
+
+@c @node Concept Index        
+@c @unnumbered 概念索引
+@c @printindex cp             
+
+@node Thanks
+@appendix 謝辞
+
+@c Author が Navi2ch Project になったからこれはいらないよね。
+@ignore
+Navi2ch を作ってくれた (not 1) さん、どうもありがとう。
+@end ignore
+
+最初に perl 版を作った hc2ivan さんに感謝です。
+
+Navi2ch は APEL、Wanderlust の一部を使用しています。作者の方々に感謝。
+
+@bye
+カーソルを以下の関数の上に置いて
+M-x eval-defun RET M-x navi2ch-doc-update-aa-list RET
+すると、AA リストのアップデートが楽になるよ。
+@lisp
+(defun navi2ch-doc-update-aa-list ()
+  (interactive)
+  (makunbound 'navi2ch-message-aa-default-alist)
+  (load (expand-file-name "../navi2ch-vars.el" default-directory))
+  (let (start end)
+    (goto-char (point-min))
+    (re-search-forward "^@comment START-OF-AA-LIST")
+    (forward-line)
+    (setq start (point))
+    (re-search-forward "^@comment END-OF-AA-LIST")
+    (setq end (match-beginning 0))
+    (delete-region start end)
+    (goto-char start)
+    (dolist (elt navi2ch-message-aa-default-alist)
+      (let ((item (car elt))
+	    (aa (cdr elt)))
+	(insert (format "@item %s\n@samp{%s}\n\n" item aa))))
+    (japanese-zenkaku-region start (point) t)))
+@end lisp

@@ -1,0 +1,85 @@
+AC_INIT(navi2ch.el)
+AM_INIT_AUTOMAKE(navi2ch, 1.8.1-BETA)
+AM_MAINTAINER_MODE
+
+AC_PREREQ(2.53)
+
+AM_PATH_LISPDIR
+
+AC_MSG_CHECKING([detecting your emacs type])
+AC_EMACS_LISP(emacstype, [dnl
+(princ (cond ((featurep 'xemacs) 'xemacs)
+             ((>= emacs-major-version 21) 'emacs21)
+             ((= emacs-major-version 20) 'emacs20)
+             (t 'UNKNOWN)))])
+AC_MSG_RESULT([$emacstype])
+
+if test -z "$emacstype" || test "$emacstype" = UNKNOWN; then
+  AC_MSG_ERROR(this package does not work on your emacs)
+fi
+
+# detect packagedir
+AC_ARG_WITH(packagedir,
+[  --with-packagedir[[=DIR]] Use package directory
+                          (With XEmacs, this option also sets
+                           icondir, lispdir, infodir, etc...)],
+[ AC_MSG_CHECKING([where package files should go])
+test "$emacstype" != xemacs && AC_MSG_ERROR(packagedir only works with XEmacs)
+case "$withval" in
+yes) AC_EMACS_LISP(packagedir,[
+(let ((prefix argv)
+      (default data-directory))
+  (princ
+   (if (and prefix
+	    (not (string= prefix "NONE"))
+	    (string-match "/\\(\\(?:lib\\|share\\)/xemacs[[^/]]*/.*$\\)" default))
+       (expand-file-name "site-packages"
+			 (expand-file-name (match-string 1 default)
+					   prefix))
+       (expand-file-name "../site-packages" default))))],
+\"${prefix}\")
+;;
+no)  unset packagedir ;;
+*)   packagedir="$withval" ;;
+esac
+AC_MSG_RESULT([$packagedir])])
+
+AC_SUBST(packagedir)
+
+if test "$emacstype" = xemacs && test -n "$packagedir"; then
+  icondir='${packagedir}/etc/navi2ch'
+  lispdir='${packagedir}/lisp/navi2ch'
+  infodir='${packagedir}/info'
+fi
+
+AC_ARG_WITH(icondir,
+[  --with-icondir=DIR      Override the default icons directory],
+[ icondir="$withval"
+AC_MSG_CHECKING([where icon files should go])
+AC_MSG_RESULT([$icondir])],
+[
+if test -z "${icondir}"; then
+  AC_CACHE_CHECK([where icon files should go], [_cv_icondir], [dnl
+    AC_EMACS_LISP(_cv_icondir,[
+(let ((prefix argv)
+      (default data-directory))
+  (princ (expand-file-name "navi2ch/icons"
+			   (if (and prefix
+				    (not (string= prefix "NONE"))
+				    (string-match "/\\(\\(?:lib\\|share\\)/x?emacs[[^/]]*/.*$\\)" default))
+			       (expand-file-name (match-string 1 default)
+						 prefix)
+			     default))))],
+\"${prefix}\")
+    if test -z "$_cv_icondir"; then
+      _cv_icondir='${datadir}/pixmaps/navi2ch'
+    fi
+  ])
+  icondir="$_cv_icondir"
+fi
+])
+
+AC_SUBST(icondir)
+
+AC_OUTPUT([Makefile contrib/Makefile doc/Makefile icons/Makefile
+navi2ch-config.el])

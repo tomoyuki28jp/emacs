@@ -1,0 +1,10 @@
+#name : header comment
+# --
+<?php
+/**
+ * ${1:summary}
+ * 
+ * @package  ${2:package}
+ * @author   Tomo Matsumoto <tomoyuki28jp@gmail.com>
+ * @version  $Id: head 2 2008-09-16 18:42:58Z tomo $
+ */

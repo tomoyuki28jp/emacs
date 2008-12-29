@@ -1,0 +1,35 @@
+-*- mode: outline; coding: iso-2022-7bit -*-
+Copyright (C) 2000-2003 Navi2ch Project
+
+このディレクトリには Navi2ch といっしょに使うと便利なファイルが入って
+います。詳しい使い方は、各ファイルの先頭のコメントを読んでね。
+
+* navi2ch-logo.el
+  レス一覧の先頭にその板のロゴを貼りつける。
+  Emacs 21 専用。
+
+* gikope.el
+  AA をキルリングにコピー。
+  プレビューとかもできるようになりました。
+
+* navi2ch-migemo.el
+  migemo を使ってレスを検索。
+
+* navi2ch-track-mouse.el
+  Emacs 20 でも help-echo プロパティを echo area に表示。
+  ~/.emacs とかで (require 'navi2ch-track-mouse) する。
+
+* izonmoji-mode.el
+  Windows、Macの機種依存文字を表示。
+  Emacs20 では Mule-UCS の jisx0213.el が必要。
+  XEmacs の場合は Commentary にある設定をしてあげてね。
+
+* navi2ch-pizaunix.el
+  http://piza.2ch.net/log/unix/0008251/ の
+  Unix 板過去ログ倉庫を見るための multibbs module です。
+
+* navi2ch-spamfilter.el
+  http://www.geocities.co.jp/SiliconValley-PaloAlto/7043/#spamfilter.el
+  を Navi2ch から利用します。
+
+$Id: README,v 1.8 2003/10/11 22:51:27 nanashi Exp $

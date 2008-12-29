@@ -1,0 +1,13 @@
+Required ubuntu packages (for ubuntu users):
+- emacs-snapshot-gtk
+- emacs-snapshot-el
+- emacs-env-ja (probably you don't need this one)
+- emacs-goodies-el
+- slime
+- elscreen
+- tramp
+- wl
+- migemo
+- w3m
+- ispell
+- imagemagick

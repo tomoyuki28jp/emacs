@@ -1,0 +1,6 @@
+*.elc
+*~
+.auth
+auto-save-list
+history/**/*
+tramp
