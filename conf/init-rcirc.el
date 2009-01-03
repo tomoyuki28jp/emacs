@@ -18,17 +18,16 @@
 ;; Adjust the colors of one of the faces.
 (set-face-foreground 'rcirc-my-nick "red" nil)
 
-;; Change user info
-(setq rcirc-default-nick "tomoyuki28jp")
-(setq rcirc-default-user-name "tomoyuki28jp")
-
-(let ((auth-file "~/.emacs.d/.auth/auth-rcirc.el"))
-  (when (file-readable-p auth-file)
-    (load auth-file)))
-;; example of auth-rcirc.el:
+;; example of ~/.emacs.d/.auth/auth-rcirc.el
+;(setq rcirc-default-nick "nick-name")
+;(setq rcirc-default-user-name "user-name")
+;
 ;(setq rcirc-authinfo
 ;      `(("freenode"  nickserv "user" "pass")
 ;        ("localhost" bitlbee  "user" "pass")))
+(let ((auth-file "~/.emacs.d/.auth/auth-rcirc.el"))
+  (when (file-readable-p auth-file)
+    (load auth-file)))
 
 (global-set-key (kbd "C-c j") 'rcirc-cmd-join)
 
