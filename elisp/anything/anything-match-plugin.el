@@ -1,5 +1,5 @@
 ;;; anything-match-plugin.el --- Humane match plug-in for anything
-;; $Id: anything-match-plugin.el 2 2008-09-16 18:42:58Z tomo $
+;; $Id: anything-match-plugin.el,v 1.19 2008/09/08 06:58:59 rubikitch Exp $
 
 ;; Copyright (C) 2008  rubikitch
 
