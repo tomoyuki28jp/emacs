@@ -3,7 +3,8 @@ TO USE:
 1. Install required packages
 [Example for ubuntu users]:
 sudo apt-get install emacs-snapshot-gtk emacs-snapshot-el emacs-env-ja \
-emacs-goodies-el slime elscreen tramp wl migemo w3m ispell imagemagick 
+emacs-goodies-el slime elscreen tramp wl migemo w3m ispell imagemagick \
+sdic sdic-edict sdic-gene95
 
 [Note]: Probably you don't need the "emacs-env-ja" package.
 
