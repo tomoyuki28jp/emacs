@@ -4,7 +4,8 @@
 
 (require 'anything)
 (require 'anything-config)
-(require 'anything-match-plugin)
+; it's handy, but it makes anything slow
+;(require 'anything-match-plugin)
 
 (define-key anything-map "\C-\M-v" 'anything-scroll-other-window)
 (define-key anything-map "\C-\M-y" 'anything-scroll-other-window-down)
