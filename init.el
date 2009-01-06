@@ -1,4 +1,4 @@
-;;; init.el
+;; init.el
 
 (defun add-to-load-path (&rest paths)
   (mapcar #'(lambda (path)
@@ -38,6 +38,7 @@
           "init-wl"
           "init-w3m"
           "init-navi2ch"
+          "init-dict"
           "init-git"
           "init-html"
           "init-javascript"
