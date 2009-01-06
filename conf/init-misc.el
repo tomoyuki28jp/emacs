@@ -12,7 +12,9 @@
 ;; 一時マークモードの自動有効化
 (setq-default transient-mark-mode t)
 ;; バッファ末尾改行コードを挿入しない
-(setq next-line-add-newlines nil)
+;(setq next-line-add-newlines nil)
+; ファイル末の改行がなければ追加
+(setq require-final-newline t)
 ;; 大文字小文字を区別
 (setq dabbrev-case-fold-search nil)
 ;; default to unified diffs
@@ -31,10 +33,11 @@
 (server-start)
 ;; 補完は ignore-case で。
 (setq completion-ignore-case t)
-;; 現在行をハイライト
-(when (eq window-system 'x) (global-hl-line-mode))
-;; 画像ファイルを表示
-(when (eq window-system 'x) (auto-image-file-mode))
+(when (eq window-system 'x)
+  ;; 現在行をハイライト
+  (global-hl-line-mode)
+  ;; 画像ファイルを表示
+  (auto-image-file-mode))
 ;; 最終行でのnext-lineをスムーズに
 (setq scroll-step 1
       scroll-conservatively 4)
