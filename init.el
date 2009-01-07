@@ -19,7 +19,6 @@
           "init-scratch"
           "init-skk"
           "init-dabbrev-expand"
-          "init-auto-complete"
           "init-abbrev"
           "init-migemo"
           "init-anything"
