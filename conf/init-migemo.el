@@ -3,4 +3,4 @@
 (require 'migemo)
 
 ; turn-off migemo when emacs starts
-;(migemo-toggle-isearch-enable)
+(migemo-toggle-isearch-enable)
