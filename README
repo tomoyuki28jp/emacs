@@ -5,25 +5,26 @@ TO USE:
 sudo apt-get install emacs-snapshot-gtk emacs-snapshot-el emacs-env-ja \
 emacs-goodies-el slime elscreen tramp wl migemo w3m ispell imagemagick \
 sdic sdic-edict sdic-gene95
-
-[Note]: Probably you don't need the "emacs-env-ja" package.
+(Probably you don't need the "emacs-env-ja" package.)
 
 2. git clone git://github.com/tomoyuki28jp/emacs.git ~/.emacs.d
 
 3. ln -s ~/.emacs.d/.emacs ~/
 
-4. If you want to use rcirc, create auth-rcirc.el file.
-(Actually, you don't have to do this. But without creating the 
- config file, you will have to type your user name and password 
+4. If you want to use rcirc, you might want to create auth-rcirc.el file.
+(Without doing this, you will have to type your user name and password 
  every time you start rcirc.)
 
 [Example]:
 ~/.emacs.d/.auth/auth-rcirc.el
+<code>
+(setq rcirc-default-nick "nick-name")
+(setq rcirc-default-user-name "user-name")
 (setq rcirc-authinfo
       `(("freenode"  nickserv "user" "pass")
         ("localhost" bitlbee  "user" "pass")))
+</code>
 
 [Note]: 
-In order to use bitlbee, you have to install bitlbee 
-(apt-get install bitlbee), setup bitlbee correctly
-and register a user.
+In order to use bitlbee, you need to install bitlbee 
+(apt-get install bitlbee), setup and register a user.
