@@ -18,7 +18,10 @@
 ;; Adjust the colors of one of the faces.
 (set-face-foreground 'rcirc-my-nick "red" nil)
 
-;; example of ~/.emacs.d/.auth/auth-rcirc.el
+; Auto auth with ~/.rcirc-authinfo don't work for me somehow.
+; http://www.emacswiki.org/emacs/rcircAutoAuthentication.
+; I use ~/.emacs.d/.auth/auth-rcirc.el instead.
+; [Example]
 ;(setq rcirc-default-nick "nick-name")
 ;(setq rcirc-default-user-name "user-name")
 ;
@@ -31,17 +34,19 @@
 
 (global-set-key (kbd "C-c j") 'rcirc-cmd-join)
 
+(setq rcirc-startup-channels-alist nil)
+
 (defun freenode ()
   (interactive)
-  (let ((rcirc-server-alist  '(("irc.freenode.net"))))
-    (rcirc nil)))
+  (rcirc nil))
 
 (defun bitlbee ()
   (interactive)
-  (unless (bitlbee-running-p) (bitlbee-start))
+  (unless (bitlbee-running-p)
+    (bitlbee-start))
   (sleep-for 0.5)
-  (let ((rcirc-server-alist '(("localhost" :channels ("&bitlbee")))))
-    (rcirc nil)))
+  (rcirc-connect
+   "localhost" "6667" "tomoyuki28jp" "Tomo Matsumoto" "&bitlbee"))
 
 ;; Notifications
 (defun th-rcirc-notification (process sender response target text)
@@ -64,5 +69,30 @@
   (start-process "notifications-add" nil
                  "stumpish" "notifications-add" str))
 
-(setq rcirc-log-flag t)
-(setq rcirc-log-directory "~/log/rcirc")
+ ;  Minimal logging
+(add-hook 'rcirc-print-hooks 'rcirc-write-log)
+(defvar my-rcirc-log-dir "~/.emacs.d/logs/rcirc/")
+(defun rcirc-write-log (process sender response target text)
+  (with-temp-buffer
+    ;; Sometimes TARGET is a buffer :-(
+    (when (bufferp target)
+      (setq target (with-current-buffer buffer rcirc-target)))
+    ;; Sometimes buffer is not anything at all!
+    (unless (or (null target) (string= target ""))
+      ;; Print the line into the temp buffer.
+      (insert (format-time-string "%Y-%m-%d %H:%M "))
+      (insert (format "%-16s " (rcirc-user-nick sender)))
+      (unless (string= response "PRIVMSG")
+        (insert "/" (downcase response) " "))
+      (insert text "\n")
+      ;; Append the line to the appropriate logfile.
+      (let* ((coding-system-for-write 'no-conversion)
+             (log-dir (concat my-rcirc-log-dir
+                              (downcase target)
+                              (format-time-string "/%Y/%m/")))
+             (log-file (format-time-string "%d")))
+        (unless (file-exists-p log-dir)
+          (make-directory log-dir t))
+        (write-region (point-min) (point-max)
+                      (concat log-dir log-file)
+                      t 'quietly)))))
