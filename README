@@ -4,7 +4,7 @@ TO USE:
 [Example for ubuntu users]:
 sudo apt-get install emacs-snapshot-gtk emacs-snapshot-el emacs-env-ja \
 emacs-goodies-el slime elscreen tramp wl migemo w3m ispell imagemagick \
-sdic sdic-edict sdic-gene95
+sdic sdic-edict sdic-gene95 xsel
 (Probably you don't need the "emacs-env-ja" package.)
 
 2. git clone git://github.com/tomoyuki28jp/emacs.git ~/.emacs.d
