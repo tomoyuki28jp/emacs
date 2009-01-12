@@ -1,4 +1,5 @@
 ;;; init-dic.el
+; http://d.hatena.ne.jp/iriya_ufo/20080331/1206952871
 
 (autoload 'sdic-describe-word "sdic"
   "describe word" t nil)
