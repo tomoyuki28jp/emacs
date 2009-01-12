@@ -33,11 +33,10 @@
 (server-start)
 ;; 補完は ignore-case で。
 (setq completion-ignore-case t)
-(when (eq window-system 'x)
-  ;; 現在行をハイライト
-  (global-hl-line-mode)
-  ;; 画像ファイルを表示
-  (auto-image-file-mode))
+;; 現在行をハイライト
+(global-hl-line-mode)
+;; 画像ファイルを表示
+(auto-image-file-mode)
 ;; 最終行でのnext-lineをスムーズに
 (setq scroll-step 1
       scroll-conservatively 4)
