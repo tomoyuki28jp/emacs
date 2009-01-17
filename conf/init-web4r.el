@@ -22,8 +22,7 @@
   (rm-dir *web4r-cache-dir*)
   (rm-fasl *web4r-src-dir*))
 
-(add-hook 'lisp-mode-hook
-          (lambda () (local-set-key "\C-crf" 'remove-fasl)))
+(global-set-key "\C-xrf" 'remove-fasl)
 
 (setq auto-mode-alist
       (append '(("\\.shtml$" . lisp-mode)) auto-mode-alist))

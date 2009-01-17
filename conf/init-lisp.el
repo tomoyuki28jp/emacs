@@ -29,16 +29,24 @@
             (show-paren-mode t)
             (local-set-key "\C-ce"  'slime-eval-buffer)
             (local-set-key "\C-cS"  'slime-other-window)
-            (local-set-key "\C-chf" 'hyperspec-lookup)))
-
-(add-hook 'slime-mode-hook
-          (lambda ()
+            (local-set-key "\C-cS"  'slime-other-window)
+            (local-set-key "\C-chf" 'hyperspec-lookup)
             (slime-define-key "\M-." 'find-tag)
             (slime-define-key "\M-8" 'pop-tag-mark)))
 
-(setq common-lisp-hyperspec-root
-      (expand-file-name "~/Documents/HyperSpec/"))
-
-;; emacs-lisp-mode
 (add-hook 'emacs-lisp-mode-hook
           (lambda () (setq indent-tabs-mode nil)))
+
+(defun slime-restart ()
+  (interactive)
+  (mapcar #'(lambda (b)
+              (let ((buff (get-buffer b)))
+                (when buff (kill-buffer buff))))
+          '("*slime-repl sbcl*"
+            "*compiler notes*"))
+  (slime-restart-inferior-lisp))
+
+(global-set-key "\C-xrs" 'slime-restart)
+
+(setq common-lisp-hyperspec-root
+      (expand-file-name "~/Documents/HyperSpec/"))
