@@ -11,8 +11,6 @@
 (setq inhibit-startup-message t)
 ;; 一時マークモードの自動有効化
 (setq-default transient-mark-mode t)
-;; バッファ末尾改行コードを挿入しない
-;(setq next-line-add-newlines nil)
 ; ファイル末の改行がなければ追加
 (setq require-final-newline t)
 ;; 大文字小文字を区別
