@@ -30,7 +30,6 @@
             (local-set-key "\C-ce"  'slime-eval-buffer)
             (local-set-key "\C-cS"  'slime-other-window)
             (local-set-key "\C-cS"  'slime-other-window)
-            (local-set-key "\C-chf" 'hyperspec-lookup)
             (slime-define-key "\M-." 'find-tag)
             (slime-define-key "\M-8" 'pop-tag-mark)))
 
@@ -47,6 +46,7 @@
   (slime-restart-inferior-lisp))
 
 (global-set-key "\C-xrs" 'slime-restart)
+(global-set-key "\C-chf" 'hyperspec-lookup)
 
 (setq common-lisp-hyperspec-root
       (expand-file-name "~/Documents/HyperSpec/"))
