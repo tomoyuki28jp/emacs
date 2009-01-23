@@ -1,0 +1,5 @@
+# -*- mode: yasnippet -*-
+#name : defun
+# --
+(defun ${1:name} (${2:args})
+  ($0))

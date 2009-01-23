@@ -1,7 +1,7 @@
 ;;; -*- Coding: utf-8 -*-
 ;;; init-bindings.el
 
-;; shift+カーソルkeyでwindowの切り替え
+;; Shift+カーソルkeyでwindowの切り替え
 (windmove-default-keybindings)
 ;; BS で選択範囲を消す
 (delete-selection-mode 1)

@@ -16,6 +16,8 @@
 (defun slime-other-window ()
   "Run slime on other window"
   (interactive)
+  (when (one-window-p)
+    (split-window-horizontally))
   (let ((tmp-buffer "*tmp*"))
     (switch-to-buffer-other-window
      (get-buffer-create tmp-buffer))

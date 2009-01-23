@@ -71,7 +71,7 @@
 
  ;  Minimal logging
 (add-hook 'rcirc-print-hooks 'rcirc-write-log)
-(defvar my-rcirc-log-dir "~/.emacs.d/logs/rcirc/")
+(defvar my-rcirc-log-dir "~/.emacs.d/log/rcirc/")
 (defun rcirc-write-log (process sender response target text)
   (with-temp-buffer
     ;; Sometimes TARGET is a buffer :-(

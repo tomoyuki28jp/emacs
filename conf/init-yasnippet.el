@@ -5,4 +5,4 @@
 ;(setq yas/next-field-key (kbd "TAB"))
 (setq anything-c-yas-space-match-any-greedy t)
 (yas/initialize)
-(yas/load-directory "~/.emacs.d/elisp/snippets/")
+(yas/load-directory "~/.emacs.d/snippets/")

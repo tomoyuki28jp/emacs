@@ -13,7 +13,6 @@
          '("init-misc"
            "init-encoding"
            "init-color"
-           "init-frame"
            "init-scratch"
            "init-skk"
            "init-dabbrev-expand"

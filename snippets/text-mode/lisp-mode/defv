@@ -1,0 +1,4 @@
+# -*- mode: yasnippet -*-
+#name : defvar
+# --
+(defvar *${1:name}* ${2:value})
