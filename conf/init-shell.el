@@ -6,7 +6,7 @@
 (add-hook 'comint-output-filter-functions
           'comint-watch-for-password-prompt)
 
-;; shell-modeで^Mを出さなくする
+;; shell-modeで^Mを出さないようにする
 (add-hook 'comint-output-filter-functions
           'shell-strip-ctrl-m nil t)
 
@@ -32,6 +32,6 @@
           "Set `ansi-color-for-comint-mode' to t." t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-(defun zsh ()
+(defun sh ()
   (interactive)
   (ansi-term "/usr/bin/zsh"))
