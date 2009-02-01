@@ -3,7 +3,7 @@ TO USE:
 1. Install required packages
 [Example for ubuntu users]:
 sudo apt-get install emacs emacs-env-ja emacs-goodies-el slime elscreen \
-tramp wl migemo w3m ispell imagemagick sdic sdic-edict sdic-gene95 xsel
+tramp wl migemo w3m ispell imagemagick sdic xsel
 (Probably you don't need the "emacs-env-ja" package.)
 
 2. git clone git://github.com/tomoyuki28jp/emacs.git ~/.emacs.d
