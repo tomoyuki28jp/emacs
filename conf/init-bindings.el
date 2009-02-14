@@ -1,14 +1,14 @@
 ;;; -*- Coding: utf-8 -*-
 ;;; init-bindings.el
 
-;; Shift+カーソルkeyでwindowの切り替え
+; Shift+カーソルkeyでwindowの切り替え
 (windmove-default-keybindings)
-;; BS で選択範囲を消す
+; BS で選択範囲を消す
 (delete-selection-mode 1)
-;; C-dやC-hで選択範囲全体を消す
+; C-dやC-hで選択範囲全体を消す
 (cua-selection-mode t)
 
-;; alias
+; alias
 (global-set-key "\C-h"  'delete-backward-char)
 (global-set-key "\C-xl" 'goto-line)
 (global-set-key "\C-o"  'dabbrev-expand)
@@ -18,5 +18,11 @@
 (global-set-key "\C-cb" 'rename-buffer)
 (global-set-key "\M-8"  'pop-tag-mark)
 
-;; prevent type for C-xu (undo)
+; resize window
+(global-set-key (kbd "A-<up>")    'enlarge-window)
+(global-set-key (kbd "A-<down>")  'shrink-window)
+(global-set-key (kbd "A-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "A-<left>")  'shrink-window-horizontally)
+
+; prevent type for C-xu (undo)
 (global-unset-key "\C-x\C-u")
