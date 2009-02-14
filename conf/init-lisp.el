@@ -36,7 +36,9 @@
             (slime-define-key "\M-8" 'pop-tag-mark)))
 
 (add-hook 'emacs-lisp-mode-hook
-          (lambda () (setq indent-tabs-mode nil)))
+          (lambda ()
+            (setq indent-tabs-mode nil)
+            (eldoc-mode t)))
 
 (defun slime-restart ()
   (interactive)
