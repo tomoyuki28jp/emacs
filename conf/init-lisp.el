@@ -8,7 +8,8 @@
 (eval-after-load "slime"
   '(progn
     (require 'slime-fancy)
-    (slime-setup '(slime-fancy slime-asdf slime-banner))
+    (slime-setup
+     '(slime-fancy slime-asdf slime-banner slime-indentation))
     (setq slime-complete-symbol*-fancy t)
     (setq slime-complete-symbol-function
           'slime-fuzzy-complete-symbol)))
