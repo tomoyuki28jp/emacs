@@ -8,9 +8,12 @@ tramp wl migemo w3m ispell imagemagick sdic xsel
 
 2. git clone git://github.com/tomoyuki28jp/emacs.git ~/.emacs.d
 
-3. ln -s ~/.emacs.d/.emacs ~/
+3. git submodule init
+   git submodule update
 
-4. If you want to use rcirc, you might want to create auth-rcirc.el file.
+4. ln -s ~/.emacs.d/.emacs ~/
+
+5. If you want to use rcirc, you might want to create auth-rcirc.el file.
 (Without doing this, you will have to type your user name and password 
  every time you start rcirc.)
 
