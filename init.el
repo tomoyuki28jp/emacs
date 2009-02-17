@@ -43,6 +43,7 @@
            "init-scheme"
            "init-sql"
            "init-stumpwm"
+           "init-markdown"
            "init-bindings")
          (if (eq window-system 'x)
              '("init-font")

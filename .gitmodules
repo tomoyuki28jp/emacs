@@ -1,3 +1,6 @@
 [submodule "elisp/egg"]
 	path = elisp/egg
 	url = git://github.com/bogolisk/egg.git
+[submodule "elisp/markdown-mode"]
+	path = elisp/markdown-mode
+	url = git://code.jblevins.org/markdown-mode.git
