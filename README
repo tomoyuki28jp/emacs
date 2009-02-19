@@ -8,8 +8,7 @@ tramp wl migemo w3m ispell imagemagick sdic xsel
 
 2. git clone git://github.com/tomoyuki28jp/emacs.git ~/.emacs.d
 
-3. git submodule init
-   git submodule update
+3. git submodule init && git submodule update
 
 4. ln -s ~/.emacs.d/.emacs ~/
 
