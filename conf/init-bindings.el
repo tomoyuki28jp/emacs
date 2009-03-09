@@ -17,6 +17,7 @@
 (global-set-key "\C-cf" 'folding-mode)
 (global-set-key "\C-cb" 'rename-buffer)
 (global-set-key "\M-8"  'pop-tag-mark)
+(global-set-key "\C-ca" 'org-agenda)
 
 ; resize window
 (global-set-key (kbd "A-<up>")    'enlarge-window)
