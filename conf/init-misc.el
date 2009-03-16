@@ -12,7 +12,7 @@
 ;; 一時マークモードの自動有効化
 (setq-default transient-mark-mode t)
 ; ファイル末の改行がなければ追加
-(setq require-final-newline t)
+;(setq require-final-newline t)
 ;; 大文字小文字を区別
 (setq dabbrev-case-fold-search nil)
 ;; default to unified diffs
