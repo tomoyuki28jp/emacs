@@ -9,9 +9,12 @@
   '(progn
     (require 'slime-fancy)
     (slime-setup
-     '(slime-fancy slime-asdf slime-banner slime-indentation))
-    (setq slime-complete-symbol*-fancy t)
-    (setq slime-complete-symbol-function
+     '(slime-fancy slime-asdf slime-banner))
+    (setq slime-complete-symbol*-fancy  t
+          lisp-simple-loop-indentation  1
+          lisp-loop-keyword-indentation 6
+          lisp-loop-forms-indentation   6
+          slime-complete-symbol-function
           'slime-fuzzy-complete-symbol)))
 
 (defun slime-other-window ()
