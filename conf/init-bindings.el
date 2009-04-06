@@ -25,5 +25,15 @@
 (global-set-key (kbd "A-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "A-<left>")  'shrink-window-horizontally)
 
+; kill all buffers
+(global-set-key "\C-ck"
+  (lambda ()
+    (interactive)
+    (loop for bf in (buffer-list)
+          for bn = (buffer-name bf)
+          unless (or (string= bn "*scratch*")
+                     (string-match (rx bol (or (+ space) "#")) bn))
+          do (kill-buffer bf))))
+
 ; prevent type for C-xu (undo)
 (global-unset-key "\C-x\C-u")
