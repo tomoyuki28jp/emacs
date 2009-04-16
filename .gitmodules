@@ -6,4 +6,4 @@
 	url = git://code.jblevins.org/markdown-mode.git
 [submodule "elisp/web4r"]
 	path = elisp/web4r
-	url = git://github.com/tomoyuki28jp/web4r-el.git
+	url = git@github.com:tomoyuki28jp/web4r-el.git
