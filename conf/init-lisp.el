@@ -7,15 +7,22 @@
 
 (eval-after-load "slime"
   '(progn
+    (add-to-list
+     'load-path "/usr/share/emacs/site-lisp/slime/contrib/")
     (require 'slime-fancy)
     (slime-setup
-     '(slime-fancy slime-asdf slime-banner))
+     '(slime-fancy slime-asdf slime-banner slime-tramp))
     (setq slime-complete-symbol*-fancy  t
           lisp-simple-loop-indentation  1
           lisp-loop-keyword-indentation 6
           lisp-loop-forms-indentation   6
           slime-complete-symbol-function
-          'slime-fuzzy-complete-symbol)))
+          'slime-fuzzy-complete-symbol)
+    (push (slime-create-filename-translator
+           :machine-instance "tomoyuki"
+           :remote-host "tomoyuki"
+           :username "tomo")
+          slime-filename-translations)))
 
 (defun slime-other-window ()
   "Run slime on other window"
