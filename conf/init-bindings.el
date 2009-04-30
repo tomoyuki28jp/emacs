@@ -37,3 +37,9 @@
 
 ; prevent type for C-xu (undo)
 (global-unset-key "\C-x\C-u")
+
+; for mlterm
+(define-key function-key-map [27 79 49 59 50 65] [S-up])
+(define-key function-key-map [27 79 49 59 50 66] [S-down])
+(define-key function-key-map [27 79 49 59 50 67] [S-right])
+(define-key function-key-map [27 79 49 59 50 68] [S-left])
