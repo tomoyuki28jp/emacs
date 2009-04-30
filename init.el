@@ -24,7 +24,6 @@
            "init-jaspace"
            "init-dmacro"
            "init-elscreen"
-           "init-folding"
            "init-woman"
            "init-bitlbee"
            "init-rcirc"
