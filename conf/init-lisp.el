@@ -18,11 +18,12 @@
           lisp-loop-forms-indentation   6
           slime-complete-symbol-function
           'slime-fuzzy-complete-symbol)
-    (push (slime-create-filename-translator
-           :machine-instance "tomoyuki"
-           :remote-host "tomoyuki"
-           :username "tomo")
-          slime-filename-translations)))
+    (setf slime-filename-translations
+          (list (slime-create-filename-translator
+                 :machine-instance "tomoyuki"
+                 :remote-host "tomoyuki"
+                 :username "tomo")
+                (list ".*" 'identity 'identity)))))
 
 (defun slime-other-window ()
   "Run slime on other window"
