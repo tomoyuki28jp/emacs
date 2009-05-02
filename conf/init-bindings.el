@@ -38,8 +38,20 @@
 ; prevent type for C-xu (undo)
 (global-unset-key "\C-x\C-u")
 
-; for mlterm
+;; xterm，mltermなど
 (define-key function-key-map [27 79 49 59 50 65] [S-up])
 (define-key function-key-map [27 79 49 59 50 66] [S-down])
 (define-key function-key-map [27 79 49 59 50 67] [S-right])
 (define-key function-key-map [27 79 49 59 50 68] [S-left])
+
+;; mrxvt, screenなど
+(define-key function-key-map [27 91 49 59 50 65] [S-up])
+(define-key function-key-map [27 91 49 59 50 66] [S-down])
+(define-key function-key-map [27 91 49 59 50 67] [S-right])
+(define-key function-key-map [27 91 49 59 50 68] [S-left])
+
+;; urxvt など
+(define-key function-key-map [27 91 97] [S-up])
+(define-key function-key-map [27 91 98] [S-down])
+(define-key function-key-map [27 91 99] [S-right])
+(define-key function-key-map [27 91 100] [S-left])
