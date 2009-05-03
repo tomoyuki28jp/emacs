@@ -43,9 +43,7 @@
             (show-paren-mode t)
             (local-set-key "\C-ce"  'slime-eval-buffer)
             (local-set-key "\C-cS"  'slime-other-window)
-            (local-set-key "\C-cS"  'slime-other-window)
-            (slime-define-key "\M-." 'find-tag)
-            (slime-define-key "\M-8" 'pop-tag-mark)))
+            (local-set-key "\C-cS"  'slime-other-window)))
 
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
