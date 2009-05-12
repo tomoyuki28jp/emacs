@@ -10,7 +10,6 @@
 (add-hook 'comint-output-filter-functions
           'shell-strip-ctrl-m nil t)
 
-
 ;;; --- term-mode --------------------------------
 (require 'term)
 
