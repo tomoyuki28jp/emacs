@@ -11,7 +11,7 @@
 (mapcar #'load
         (append
          '("init-misc"
-           "init-encoding"
+           "init-coding"
            "init-color"
            "init-scratch"
            "init-dabbrev-expand"
