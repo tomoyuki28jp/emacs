@@ -20,10 +20,16 @@
 (global-set-key "\C-ca" 'org-agenda)
 
 ; resize window
+;; for gnome-terminal
 (global-set-key (kbd "A-<up>")    'enlarge-window)
 (global-set-key (kbd "A-<down>")  'shrink-window)
 (global-set-key (kbd "A-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "A-<left>")  'shrink-window-horizontally)
+;; for urxvt
+(global-set-key (kbd "ESC <up>")    'enlarge-window)
+(global-set-key (kbd "ESC <down>")  'shrink-window)
+(global-set-key (kbd "ESC <right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "ESC <left>")  'shrink-window-horizontally)
 
 ; kill all buffers
 (global-set-key "\C-ck"
@@ -38,19 +44,19 @@
 ; prevent type for C-xu (undo)
 (global-unset-key "\C-x\C-u")
 
-;; xterm，mltermなど
+;; for xterm，mlterm, etc
 (define-key function-key-map [27 79 49 59 50 65] [S-up])
 (define-key function-key-map [27 79 49 59 50 66] [S-down])
 (define-key function-key-map [27 79 49 59 50 67] [S-right])
 (define-key function-key-map [27 79 49 59 50 68] [S-left])
 
-;; mrxvt, screenなど
+;; for mrxvt, screen, etc
 (define-key function-key-map [27 91 49 59 50 65] [S-up])
 (define-key function-key-map [27 91 49 59 50 66] [S-down])
 (define-key function-key-map [27 91 49 59 50 67] [S-right])
 (define-key function-key-map [27 91 49 59 50 68] [S-left])
 
-;; urxvt など
+;; for urxvt, etc
 (define-key function-key-map [27 91 97] [S-up])
 (define-key function-key-map [27 91 98] [S-down])
 (define-key function-key-map [27 91 99] [S-right])
