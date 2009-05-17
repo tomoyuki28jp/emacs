@@ -32,7 +32,7 @@
 ;; 補完は ignore-case で。
 (setq completion-ignore-case t)
 ;; 現在行をハイライト
-(global-hl-line-mode)
+;(global-hl-line-mode)
 ;; 画像ファイルを表示
 (auto-image-file-mode)
 ;; 最終行でのnext-lineをスムーズに
