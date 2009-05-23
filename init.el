@@ -33,6 +33,7 @@
            "init-html"
            "init-javascript"
            "init-php"
+           "init-scheme"
            "init-lisp"
            "init-web4r"
            "init-stumpwm"
