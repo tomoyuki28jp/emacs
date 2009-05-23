@@ -18,6 +18,7 @@
 (global-set-key "\C-cb" 'rename-buffer)
 (global-set-key "\M-8"  'pop-tag-mark)
 (global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-xf" 'flyspell-mode)
 
 ; resize window
 ;; for gnome-terminal
