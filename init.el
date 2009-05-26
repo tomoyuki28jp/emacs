@@ -8,6 +8,8 @@
  "~/.emacs.d/elisp"
  "~/.emacs.d/conf")
 
+(require 'bitlbee)
+
 (mapcar #'load
         (append
          '("init-misc"
@@ -23,7 +25,6 @@
            "init-jaspace"
            "init-dmacro"
            "init-elscreen"
-           "init-bitlbee"
            "init-rcirc"
            "init-moz"
            "init-wl"
