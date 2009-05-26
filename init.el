@@ -9,6 +9,7 @@
  "~/.emacs.d/conf")
 
 (require 'bitlbee)
+(require 'moccur-edit)
 
 (mapcar #'load
         (append
