@@ -40,6 +40,7 @@
            "init-web4r"
            "init-stumpwm"
            "init-markdown"
+           "init-org"
            "init-bindings")
          (if (eq window-system 'x)
              '("init-font")
