@@ -2,6 +2,8 @@
 
 (setq enable-local-variables :all)
 (setq inferior-lisp-program "/usr/bin/sbcl")
+;(setq inferior-lisp-program
+;      "/home/tomo/src/lisp/ccl/lx86cl /home/tomo/src/lisp/ccl/ccl-deb")
 (require 'slime)
 (setq slime-net-coding-system 'utf-8-unix)
 
@@ -56,6 +58,7 @@
               (let ((buff (get-buffer b)))
                 (when buff (kill-buffer buff))))
           '("*slime-repl sbcl*"
+            "*slime-repl openmcl*"
             "*compiler notes*"))
   (slime-restart-inferior-lisp))
 
