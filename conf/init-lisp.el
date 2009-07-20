@@ -59,6 +59,7 @@
                 (when buff (kill-buffer buff))))
           '("*slime-repl sbcl*"
             "*slime-repl openmcl*"
+            "*slime-repl allegro*"
             "*compiler notes*"))
   (slime-restart-inferior-lisp))
 
