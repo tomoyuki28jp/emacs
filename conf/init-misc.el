@@ -28,7 +28,7 @@
 ;; tab width
 (setq tab-width 4)
 ;; emacsclient サーバを起動
-(server-start)
+;(server-start)
 ;; 補完は ignore-case で。
 (setq completion-ignore-case t)
 ;; 現在行をハイライト
