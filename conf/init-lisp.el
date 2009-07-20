@@ -2,8 +2,8 @@
 
 (setq enable-local-variables :all)
 (setq inferior-lisp-program "/usr/bin/sbcl")
-;(setq inferior-lisp-program
-;      "/home/tomo/src/lisp/ccl/lx86cl /home/tomo/src/lisp/ccl/ccl-deb")
+;(setq inferior-lisp-program "/home/tomo/src/lisp/ccl/lx86cl /home/tomo/src/lisp/ccl/ccl-deb")
+;(setq inferior-lisp-program "/usr/local/acl81_express/alisp")
 (require 'slime)
 (setq slime-net-coding-system 'utf-8-unix)
 
