@@ -2,8 +2,8 @@
 
 (when (>= emacs-major-version 23)
   (add-to-list 'default-frame-alist
-               '(font . "Bitstream Vera Sans Mono-7"))
-  (set-default-font "Bitstream Vera Sans Mono-7")
+               '(font . "Bitstream Vera Sans Mono-9"))
+  (set-default-font "Bitstream Vera Sans Mono-9")
   (set-fontset-font "fontset-default"
                     'japanese-jisx0208
                     '("VL Gothic" . "unicode-bmp")))
