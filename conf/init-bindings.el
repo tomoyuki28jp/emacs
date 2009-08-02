@@ -1,6 +1,10 @@
 ;;; -*- Coding: utf-8 -*-
 ;;; init-bindings.el
 
+(when (eq window-system 'x)
+  (setq x-super-keysym 'meta)
+  (setq x-meta-keysym 'super))
+
 ; Shift+カーソルkeyでwindowの切り替え
 (windmove-default-keybindings)
 ; BS で選択範囲を消す
