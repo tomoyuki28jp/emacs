@@ -2,8 +2,7 @@
 ;;; init-bindings.el
 
 (when (eq window-system 'x)
-  (setq x-super-keysym 'meta)
-  (setq x-meta-keysym 'super))
+  (setq x-super-keysym 'meta))
 
 ; Shift+カーソルkeyでwindowの切り替え
 (windmove-default-keybindings)
