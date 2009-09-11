@@ -1,14 +1,12 @@
 ;;; -*- Mode: Emacs-Lisp ; Coding: utf-8 -*-
 
-(if (eq window-system 'x)
-    (progn
-      (set-background-color "black")
-      (set-foreground-color "white"))
-  (progn
-    (add-to-load-path "~/.emacs.d/elisp/color-theme/")
-    (require 'color-theme)
-    (color-theme-initialize)
+(add-to-load-path "~/.emacs.d/elisp/color-theme/")
+(require 'color-theme)
+(color-theme-initialize)
 
+(if (eq window-system 'x)
+    (color-theme-billw)
+  (progn
     (color-theme-install
      '(color-theme-billw
        ((foreground-color . "cornsilk")
