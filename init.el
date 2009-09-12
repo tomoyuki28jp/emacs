@@ -27,6 +27,7 @@
            "init-dmacro"
            "init-elscreen"
            "init-rcirc"
+           "init-erc"
            "init-moz"
            "init-wl"
            "init-w3m"
