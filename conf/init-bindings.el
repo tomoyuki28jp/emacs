@@ -25,15 +25,20 @@
 
 ; resize window
 ;; for gnome-terminal
-(global-set-key (kbd "A-<up>")    'enlarge-window)
-(global-set-key (kbd "A-<down>")  'shrink-window)
-(global-set-key (kbd "A-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "A-<left>")  'shrink-window-horizontally)
+(global-set-key (kbd "A-<up>")      'enlarge-window)
+(global-set-key (kbd "A-<down>")    'shrink-window)
+(global-set-key (kbd "A-<right>")   'enlarge-window-horizontally)
+(global-set-key (kbd "A-<left>")    'shrink-window-horizontally)
 ;; for urxvt
 (global-set-key (kbd "ESC <up>")    'enlarge-window)
 (global-set-key (kbd "ESC <down>")  'shrink-window)
 (global-set-key (kbd "ESC <right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "ESC <left>")  'shrink-window-horizontally)
+;; for x-window
+(global-set-key (kbd "M-<up>")      'enlarge-window)
+(global-set-key (kbd "M-<down>")    'shrink-window)
+(global-set-key (kbd "M-<right>")   'enlarge-window-horizontally)
+(global-set-key (kbd "M-<left>")    'shrink-window-horizontally)
 
 ; kill all buffers
 (global-set-key "\C-ck"
