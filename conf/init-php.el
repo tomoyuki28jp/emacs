@@ -20,4 +20,5 @@
             (setq comment-start "/**")
             (setq comment-end " */")
             (jaspace-mode-on)
-            (setq jaspace-highlight-tabs t)))
+            (setq jaspace-highlight-tabs t)
+            (c-set-offset 'arglist-close 0)))
