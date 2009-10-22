@@ -22,6 +22,7 @@
 (global-set-key "\M-8"  'pop-tag-mark)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-xf" 'flyspell-mode)
+(global-set-key "\C-t" 'other-window)
 
 ; resize window
 ;; for gnome-terminal
