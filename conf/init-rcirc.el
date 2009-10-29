@@ -34,7 +34,9 @@
 
 (global-set-key (kbd "C-c j") 'rcirc-cmd-join)
 
-(setq rcirc-startup-channels-alist nil)
+(if (< emacs-major-version 23)
+    (setq rcirc-startup-channels-alist nil)
+    (setq rcirc-server-alist '(("irc.freenode.net"))))
 
 (defun freenode ()
   (interactive)
