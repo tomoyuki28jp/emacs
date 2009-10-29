@@ -19,6 +19,7 @@
            "init-scratch"
            "init-dabbrev-expand"
            "init-migemo"
+           "init-stumpwm"
            "init-anything"
            "init-yasnippet"
            "init-tramp"
@@ -39,7 +40,6 @@
            "init-scheme"
            "init-lisp"
            "init-web4r"
-           "init-stumpwm"
            "init-markdown"
            "init-org"
            "init-bindings")

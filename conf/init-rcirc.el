@@ -60,14 +60,9 @@
                 (string-match "localhost" (format "%s" process))
                 ;; Messages that mention my name
                 (string-match my-nick text)))
-      (th-notifications-add (concat "rcirc: " target)))))
+      (stumpish (concat "rcirc: " target)))))
 
 (add-hook 'rcirc-print-hooks 'th-rcirc-notification)
-
-(defun th-notifications-add (str)
-  (interactive "sNotification: ")
-  (start-process "notifications-add" nil
-                 "stumpish" "notifications-add" str))
 
  ;  Minimal logging
 (add-hook 'rcirc-print-hooks 'rcirc-write-log)
