@@ -2,13 +2,14 @@
 
 (load-library "php-mode")
 (require 'php-mode)
-(setq php-mode-force-pear t)
+(add-to-list 'auto-mode-alist (cons "\\.ctp$" 'php-mode))
 (add-hook 'php-mode-hook
           (lambda ()
             (c-set-style "stroustrup")
             (setq tab-width 4)
             (setq c-basic-offset 4)
             (setq c-hanging-comment-ender-p nil)
+            (setq php-mode-force-pear t)
             (setq indent-tabs-mode nil)
             (setq php-manual-path "/usr/local/share/php/manual")
             (setq tags-file-name "/usr/local/share/php/etags/TAGS")
