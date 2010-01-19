@@ -1,10 +1,8 @@
 ;;; init-html.el
 
 (load "~/.emacs.d/elisp/nxhtml/autostart.el")
-(setq nxhtml-mode-hook
-      '(lambda () (setq-default
-                   tab-width 4
-                   indent-tabs-mode nil)))
+(add-hook 'nxhtml-mode-hook
+      '(lambda () (setq indent-tabs-mode nil tab-width 4)))
 
 (custom-set-faces
  '(mumamo-background-chunk-major ((t (:background "dark"))))
