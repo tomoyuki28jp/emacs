@@ -2,7 +2,7 @@
 
 (load-library "php-mode")
 (require 'php-mode)
-(add-to-list 'auto-mode-alist (cons "\\.ctp$" 'php-mode))
+(add-to-list 'auto-mode-alist (cons "\\.ctp$" 'html-mode))
 (add-hook 'php-mode-hook
           (lambda ()
             (c-set-style "stroustrup")
