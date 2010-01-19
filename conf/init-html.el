@@ -1,4 +1,7 @@
 ;;; init-html.el
 
-(setq html-mode-hook
-      '(lambda () (setq-default tab-width 4 indent-tabs-mode nil)))
+(load "~/.emacs.d/elisp/nxhtml/autostart.el")
+(setq nxhtml-mode-hook
+      '(lambda () (setq-default
+                   tab-width 4
+                   indent-tabs-mode nil)))
