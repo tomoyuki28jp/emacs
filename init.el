@@ -42,7 +42,9 @@
            "init-web4r"
            "init-markdown"
            "init-org"
-           "init-bindings")
+           "init-bindings"
+           "init-ruby"
+           "init-rails")
          (if (eq window-system 'x)
              '("init-font")
            '("init-xsel"))))
