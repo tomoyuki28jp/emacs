@@ -23,6 +23,7 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-xf" 'flyspell-mode)
 (global-set-key "\C-t" 'other-window)
+(global-set-key "\C-xvs" 'egg-status)
 
 ; resize window
 ;; for gnome-terminal
