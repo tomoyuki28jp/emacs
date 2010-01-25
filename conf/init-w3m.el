@@ -7,3 +7,6 @@
 (setq w3m-use-cookies t)
 ;(setq w3m-pop-up-frames t)
 ;(setq w3m-select-buffer-horizontal-window t)
+
+(add-hook 'w3m-mode-hook
+          (lambda () (local-set-key "\C-t" 'other-window)))
