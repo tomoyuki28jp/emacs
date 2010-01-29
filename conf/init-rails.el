@@ -8,5 +8,7 @@
 (add-to-load-path "~/.emacs.d/elisp/rhtml/")
 (require 'rhtml-mode)
 (add-hook 'rhtml-mode-hook
-    (lambda () (rinari-launch)))
+    (lambda ()
+      (rinari-launch)
+      (setq indent-tabs-mode nil tab-width 4)))
 
