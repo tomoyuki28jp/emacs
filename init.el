@@ -35,6 +35,7 @@
            "init-dict"
            "init-git"
            "init-html"
+           "init-css"
            "init-javascript"
            "init-php"
            "init-scheme"
