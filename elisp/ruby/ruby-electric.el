@@ -119,7 +119,7 @@ strings. Note that you must have Font Lock enabled."
 ;  (define-key ruby-mode-map "[" 'ruby-electric-matching-char)
 ;  (define-key ruby-mode-map "\"" 'ruby-electric-matching-char)
 ;  (define-key ruby-mode-map "\'" 'ruby-electric-matching-char)
-;  (define-key ruby-mode-map "|" 'ruby-electric-bar)
+  (define-key ruby-mode-map "|" 'ruby-electric-bar)
   )
 
 (defun ruby-electric-space (arg)
