@@ -7,3 +7,9 @@
 [submodule "elisp/web4r"]
 	path = elisp/web4r
 	url = git@github.com:tomoyuki28jp/web4r-el.git
+[submodule "elisp/rinari/util/jump"]
+	path = elisp/rinari/util/jump
+	url = git://github.com/eschulte/jump.el.git
+[submodule "elisp/rinari/util/test/ert"]
+	path = elisp/rinari/util/test/ert
+	url = git://github.com/nex3/ert.git

@@ -4,6 +4,9 @@
 (when (eq window-system 'x)
   (setq x-super-keysym 'meta))
 
+(when (eq system-type 'darwin)
+  (setq mac-option-modifier 'meta))
+
 ; Shift+カーソルkeyでwindowの切り替え
 (windmove-default-keybindings)
 ; BS で選択範囲を消す

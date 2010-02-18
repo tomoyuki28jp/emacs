@@ -1,3 +1,3 @@
 ;;; init-frame.el
 
-(setq initial-frame-alist '((width . 205) (height . 60)))
+(add-to-list 'default-frame-alist '(alpha 85 60))

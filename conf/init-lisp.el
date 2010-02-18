@@ -1,7 +1,9 @@
 ;;; init-lisp.el
 
+(add-to-load-path "~/.emacs.d/elisp/slime/")
+
 (setq enable-local-variables :all)
-(setq inferior-lisp-program "/usr/bin/sbcl")
+(setq inferior-lisp-program (if (eq system-type 'darwin) "/opt/local/bin/sbcl" "/usr/bin/sbcl"))
 ;(setq inferior-lisp-program "/home/tomo/src/lisp/ccl/lx86cl /home/tomo/src/lisp/ccl/ccl-deb")
 ;(setq inferior-lisp-program "/usr/local/acl81_express/alisp")
 (require 'slime)
@@ -9,8 +11,7 @@
 
 (eval-after-load "slime"
   '(progn
-    (add-to-list
-     'load-path "/usr/share/emacs/site-lisp/slime/contrib/")
+    (add-to-list 'load-path "~/.emacs.d/elisp/slime/contrib/")
     (require 'slime-fancy)
     (slime-setup
      '(slime-fancy slime-asdf slime-banner slime-tramp))

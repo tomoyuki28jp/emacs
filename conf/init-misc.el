@@ -46,17 +46,17 @@
       auto-save-list-file-prefix nil
       make-backup-files nil)
 ;; for flyspell-mode
-(setq ispell-program-name "/usr/bin/ispell")
+(unless (eq system-type 'darwin)
+  (setq ispell-program-name "/usr/bin/ispell"))
 ;; ダイアログボックスを使わない
 (setq use-dialog-boxes nil)
 ;; カーソル点滅しない
 (blink-cursor-mode 0)
 ;; メニューバーを消す
 (menu-bar-mode -1)
-;; ツールバーを消す
-(tool-bar-mode -1)
-;; スクロールバーを消す
-(set-scroll-bar-mode nil)
+(when window-system
+  (tool-bar-mode -1)         ;; ツールバーを消す
+  (set-scroll-bar-mode nil)) ;; スクロールバーを消す
 ;; 列数表示
 (column-number-mode 1)
 ;; 括弧の対応をハイライト.

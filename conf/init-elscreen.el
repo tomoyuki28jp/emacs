@@ -2,12 +2,12 @@
 
 (add-to-load-path "~/.emacs.d/elisp/elscreen/")
 
-(load "elscreen")
+(when (and (eq system-type 'darwin) (null window-system))
+  (add-to-load-path "/Applications/Emacs.app/Contents/Resources/site-lisp/apel/")
+  (add-to-load-path "/Applications/Emacs.app/Contents/Resources/site-lisp/emu/"))
 
-;; plugins
+(load "elscreen")
 (load "elscreen-dnd")
-(load "elscreen-gf")
 (load "elscreen-dired")
 (load "elscreen-server")
-(load "elscreen-w3m")
-;(load "elscreen-wl")
+;(load "elscreen-w3m")

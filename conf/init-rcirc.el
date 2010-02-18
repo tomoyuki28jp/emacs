@@ -62,7 +62,7 @@
                 (string-match "localhost" (format "%s" process))
                 ;; Messages that mention my name
                 (string-match my-nick text)))
-      (stumpish (concat "rcirc: " target)))))
+      (notify "rcirc" target))))
 
 (add-hook 'rcirc-print-hooks 'th-rcirc-notification)
 

@@ -26,4 +26,4 @@
                    (matched (loop for keyword in exclude-keywords
                                   when (string-match keyword message) return t)))
               (unless matched
-                (stumpish (concat "erc: " channel))))))
+                (notify "erc" channel)))))
