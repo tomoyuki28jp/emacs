@@ -33,7 +33,6 @@
            "init-rcirc"
            "init-erc"
            "init-moz"
-           "init-wl"
            "init-w3m"
            "init-dict"
            "init-git"
@@ -54,5 +53,7 @@
            (unless (eq system-type 'darwin)
              '("init-xsel")))
          (if (eq system-type 'darwin)
-             '("init-frame")
-           '("init-font"))))
+             '("init-frame"
+               "init-mew")
+           '("init-font"
+             "init-wl"))))
