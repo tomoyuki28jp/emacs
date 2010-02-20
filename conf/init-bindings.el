@@ -20,7 +20,6 @@
 (global-set-key "\C-o"  'dabbrev-expand)
 (global-set-key "\M-/"  'ispell-complete-word)
 (global-set-key "\C-co" 'outline-mode)
-(global-set-key "\C-cf" 'folding-mode)
 (global-set-key "\C-cb" 'rename-buffer)
 (global-set-key "\M-8"  'pop-tag-mark)
 (global-set-key "\C-ca" 'org-agenda)
