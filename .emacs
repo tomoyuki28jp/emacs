@@ -54,6 +54,7 @@
              '("init-xsel")))
          (if (eq system-type 'darwin)
              '("init-frame"
-               "init-mew")
+               "init-mew"
+               "init-objc")
            '("init-font"
              "init-wl"))))
