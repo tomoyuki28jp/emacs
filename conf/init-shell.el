@@ -33,4 +33,4 @@
 
 (defun sh ()
   (interactive)
-  (ansi-term "/usr/bin/zsh"))
+  (ansi-term "zsh"))
