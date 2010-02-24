@@ -46,7 +46,7 @@
            "init-stumpwm"
            "init-web4r"
            "init-bindings")
-         (if (eq window-system 'x)
+         (if window-system
              '("init-html"
                "init-css"
                "init-rails")
