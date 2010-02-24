@@ -19,10 +19,7 @@
 (add-hook 'erc-text-matched-hook
           (lambda (match-type nickuserhost message)
             (let* ((channel (car (split-string (buffer-name) "@")))
-                   (exclude-keywords
-                    '("^*** Welcome to the Internet Relay Network"
-                      "^*** ChanServ (ChanServ@services.) has changed mode for"
-                      "^*** Users on #"))
+                   (exclude-keywords '("^*** "))
                    (matched (loop for keyword in exclude-keywords
                                   when (string-match keyword message) return t)))
               (unless matched
