@@ -1,6 +1,7 @@
 ;;; init-rcirc.el
 
 (require 'rcirc)
+(require 'bitlbee)
 
 ;; Don't print /away messages.
 (defun rcirc-handler-301 (process cmd sender args)

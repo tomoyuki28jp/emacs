@@ -11,9 +11,6 @@
 (when (eq system-type 'darwin)
   (add-to-load-path "/usr/local/share/emacs/site-lisp/"))
 
-(require 'bitlbee)
-(require 'moccur-edit)
-
 (mapcar #'load
         (append
          '("init-notify"
