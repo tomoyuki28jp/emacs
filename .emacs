@@ -58,3 +58,5 @@
                "init-objc")
            '("init-font"
              "init-wl"))))
+
+(setq ffap-newfile-prompt nil)
