@@ -42,6 +42,7 @@
            "init-ruby"
            "init-stumpwm"
            "init-web4r"
+           "init-mew"
            "init-bindings")
          (if window-system
              '("init-html"
@@ -51,9 +52,7 @@
              '("init-xsel")))
          (if (eq system-type 'darwin)
              '("init-frame"
-               "init-mew"
                "init-objc")
-           '("init-font"
-             "init-wl"))))
+           '("init-font"))))
 
 (setq ffap-newfile-prompt nil)

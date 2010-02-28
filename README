@@ -2,7 +2,7 @@ TO USE:
 
 1. Install required packages
 [Example for ubuntu users]:
-sudo apt-get install emacs elscreen wl gnutls-bin w3m migemo ispell xsel imagemagick sdic
+sudo apt-get install emacs elscreen mew gnutls-bin w3m migemo ispell xsel imagemagick sdic
 
 2. git clone git://github.com/tomoyuki28jp/emacs.git ~/.emacs.d
 
