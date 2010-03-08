@@ -1,6 +1,7 @@
 ;;; init-lisp.el
 
-(add-to-load-path "~/.emacs.d/elisp/slime/")
+(when (eq system-type 'darwin)
+  (add-to-load-path "~/.emacs.d/elisp/slime/"))
 
 (setq enable-local-variables :all)
 (setq inferior-lisp-program (if (eq system-type 'darwin) "/opt/local/bin/sbcl" "/usr/bin/sbcl"))
