@@ -4,3 +4,4 @@
 (autoload 'javascript-mode "javascript" nil t)
 (add-hook 'javascript-mode-hook
           (lambda () (setq indent-tabs-mode nil)))
+(setq javascript-indent-level 2)
