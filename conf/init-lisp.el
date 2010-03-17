@@ -69,4 +69,4 @@
 (global-set-key "\C-chf" 'hyperspec-lookup)
 
 (setq common-lisp-hyperspec-root
-      (expand-file-name "~/Documents/HyperSpec/"))
+      (expand-file-name "/usr/local/share/doc/HyperSpec/"))
