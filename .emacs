@@ -35,6 +35,7 @@
            "init-git"
            "init-javascript"
            "init-php"
+           "init-java"
            "init-scheme"
            "init-lisp"
            "init-markdown"
@@ -45,7 +46,8 @@
            "init-mew"
            "init-bindings")
          (if window-system
-             '("init-html"
+             '(
+;               "init-html"
                "init-css"
                "init-rails")
            (unless (eq system-type 'darwin)
