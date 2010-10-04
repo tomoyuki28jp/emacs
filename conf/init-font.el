@@ -1,9 +1,7 @@
 ;;; init-font.el
 
 (when (>= emacs-major-version 23)
-  (add-to-list 'default-frame-alist
-               '(font . "Osaka－等幅-9"))
-  (set-default-font "Osaka－等幅-9")
-  (set-fontset-font "fontset-default"
-                    'japanese-jisx0208
-                    '("Osaka－等幅-9" . "unicode-bmp")))
+  (let ((font (concat "Osaka－等幅-" (if (eq system-type 'darwin) "9" "11"))))
+    (add-to-list 'default-frame-alist `(font . ,font))
+    (set-default-font font)
+    (set-fontset-font "fontset-default" 'japanese-jisx0208 `(,font . "unicode-bmp"))))
