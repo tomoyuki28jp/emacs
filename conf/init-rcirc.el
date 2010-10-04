@@ -45,9 +45,6 @@
 
 (defun bitlbee ()
   (interactive)
-  (unless (bitlbee-running-p)
-    (bitlbee-start))
-  (sleep-for 0.5)
   (rcirc-connect
    "localhost" "6667" "tomoyuki28jp" "Tomo Matsumoto" "&bitlbee"))
 
