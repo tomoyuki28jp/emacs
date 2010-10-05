@@ -41,6 +41,7 @@
            "init-markdown"
            "init-org"
            "init-ruby"
+           "init-rvm"
            "init-stumpwm"
            "init-web4r"
            "init-mew"
