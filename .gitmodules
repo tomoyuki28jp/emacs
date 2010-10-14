@@ -10,3 +10,6 @@
 [submodule "elisp/rvm"]
 	path = elisp/rvm
 	url = http://github.com/senny/rvm.el.git
+[submodule "elisp/rails"]
+	path = elisp/rails
+	url = git://github.com/remvee/emacs-rails.git
