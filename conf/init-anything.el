@@ -3,10 +3,10 @@
 (add-to-load-path "~/.emacs.d/elisp/anything/")
 
 (require 'recentf-ext)
-;(require 'anything)
-;(require 'anything-config)
-(require 'anything-startup)
-;(require 'anything-match-plugin)
+(require 'anything)
+(require 'anything-config)
+(require 'anything-match-plugin)
+;(require 'anything-startup)
 
 (define-key anything-map "\C-\M-v" 'anything-scroll-other-window)
 (define-key anything-map "\C-\M-y" 'anything-scroll-other-window-down)
