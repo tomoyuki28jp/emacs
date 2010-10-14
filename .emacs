@@ -46,6 +46,7 @@
            "init-web4r"
            "init-mew"
            "init-moccur"
+           "init-install"
            "init-bindings")
          (if window-system
              '(
