@@ -2,6 +2,9 @@
 ;(require 'ido)
 ;(ido-mode t)
 
+(add-to-load-path "~/.emacs.d/elisp/rails/")
+(require 'rails)
+
 (add-to-load-path "~/.emacs.d/elisp/rinari/")
 (require 'rinari)
 
