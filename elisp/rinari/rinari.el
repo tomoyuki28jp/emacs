@@ -271,7 +271,9 @@ from your conf/database.sql file."
 	       (port (cdr (assoc "port" database-alist)))
 	       (sql-server (if port (concat server ":" port) server)))
 	  (if (string-match "sqlite" adapter) (setf adapter "sqlite"))
-	  (eval (list (intern (concat "sql-" adapter))))
+          (if (string-match "mysql" adapter)
+              (setq adapter "mysql"))
+          (eval (list (intern (concat "sql-" adapter))))
 	  (rename-buffer (sql-name environment)) (rinari-launch))))))
 
 (defun rinari-web-server (&optional edit-cmd-args)
