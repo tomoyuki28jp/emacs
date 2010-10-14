@@ -45,6 +45,7 @@
            "init-stumpwm"
            "init-web4r"
            "init-mew"
+           "init-moccur"
            "init-bindings")
          (if window-system
              '(
