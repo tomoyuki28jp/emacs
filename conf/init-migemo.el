@@ -19,3 +19,5 @@
       (setq migemo-coding-system 'utf-8-unix)
       (load-library "migemo")
       (migemo-init)))
+
+(setq migemo-isearch-enable-p nil)
