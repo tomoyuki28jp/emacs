@@ -6,3 +6,8 @@
     (start-process
      "notifications-add" nil
      "stumpish" "notifications-add" title ": " msg)))
+
+(defun notify2 (title msg)
+  (if (eq system-type 'darwin)
+      (notify nil msg)
+    (start-process "notify-send" nil "notify-send" title msg)))
