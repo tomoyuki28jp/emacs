@@ -9,5 +9,3 @@
     (lambda ()
       (rinari-launch)
       (setq indent-tabs-mode nil tab-width 4)))
-
-(require 'autotest)
