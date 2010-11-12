@@ -36,7 +36,7 @@
            "init-javascript"
            "init-php"
            "init-java"
-           "init-scheme"
+;           "init-scheme"
            "init-lisp"
            "init-markdown"
            "init-org"
