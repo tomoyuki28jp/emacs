@@ -13,3 +13,6 @@
 [submodule "elisp/rinari"]
 	path = elisp/rinari
 	url = git://github.com/eschulte/rinari.git
+[submodule "elisp/autotest"]
+	path = elisp/autotest
+	url = git@github.com:tomoyuki28jp/autotest.el.git

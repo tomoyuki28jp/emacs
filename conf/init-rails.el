@@ -9,3 +9,8 @@
     (lambda ()
       (rinari-launch)
       (setq indent-tabs-mode nil tab-width 4)))
+
+(add-to-load-path "~/.emacs.d/elisp/autotest/")
+(require 'autotest)
+(setq autotest-use-spork t)
+(setq autotest-default-directory "/home/tomo/tamacy/")
